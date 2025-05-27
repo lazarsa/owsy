@@ -1425,7 +1425,7 @@
                                                         "type": "checkbox",
                                                         "label": "$500",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1434,7 +1434,7 @@
                                                         "type": "checkbox",
                                                         "label": "$1,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1443,7 +1443,7 @@
                                                         "type": "checkbox",
                                                         "label": "$2,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1454,7 +1454,7 @@
                                                         "type": "checkbox",
                                                         "label": "$3,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1463,7 +1463,7 @@
                                                         "type": "checkbox",
                                                         "label": "$4,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1472,7 +1472,7 @@
                                                         "type": "checkbox",
                                                         "label": "$5,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1481,7 +1481,7 @@
                                                         "type": "checkbox",
                                                         "label": "$10,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1492,7 +1492,7 @@
                                                         "type": "checkbox",
                                                         "label": "$15,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1501,7 +1501,7 @@
                                                         "type": "checkbox",
                                                         "label": "$20,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1510,7 +1510,7 @@
                                                         "type": "checkbox",
                                                         "label": "$25,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1519,7 +1519,7 @@
                                                         "type": "checkbox",
                                                         "label": "$50,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1530,7 +1530,7 @@
                                                         "type": "checkbox",
                                                         "label": "$75,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1539,7 +1539,7 @@
                                                         "type": "checkbox",
                                                         "label": "$100,000",
                                                         "width": 3,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": null,
                                                         "default": false,
                                                         "decision": null
@@ -1605,61 +1605,31 @@
                                             "rows": [
                                                 {
                                                     "operational_1": {
-                                                        "type": "choice",
-                                                        "label": "A. Liquid Immersion cooling used for all cryptocurrency mining computers at insured location(s)?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Liquid Immersion cooling used for all cryptocurrency mining computers at insured location(s)?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
                                                         "help": null,
-                                                        "default": null,
                                                         "decision": null
                                                     }
                                                 },
                                                 {
                                                     "operational_2": {
-                                                        "type": "choice",
-                                                        "label": "B. Does the hosting/co-location company have technicians/employees that are certified by the manufacturer(s)?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Does the hosting/co-location company have technicians/employees that are certified by the manufacturer(s)?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
                                                         "help": null,
-                                                        "default": null,
                                                         "decision": null
                                                     }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "retail_miner_specific": {
-                                            "type": "section",
-                                            "label": "Retail Miner - Specific CGL Coverage Questions:",
-                                            "width": 12,
-                                            "rows": [
+                                                },
                                                 {
                                                     "retail_miner_specific_question1": {
-                                                        "type": "choice",
-                                                        "label": "A. Is there a formal written safety and security policy in effect for each facility where your equipment is operational?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Is there a formal written safety and security policy in effect for each facility where your equipment is operational?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Retail-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -1683,18 +1653,11 @@
                                                 },
                                                 {
                                                     "retail_miner_specific_question2": {
-                                                        "type": "choice",
-                                                        "label": "B. Does your hosting contract require you to insure your own equipment that is in the possession of the hosting/co-location company?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Does your hosting contract require you to insure your own equipment that is in the possession of the hosting/co-location company?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Retail-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -1718,18 +1681,11 @@
                                                 },
                                                 {
                                                     "retail_miner_specific_question3": {
-                                                        "type": "choice",
-                                                        "label": "C. Do you lease your equipment to others?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Do you lease your equipment to others?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Retail-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -1750,30 +1706,14 @@
                                                             "default_outcome": "product_field.excluded"
                                                         }
                                                     }
-                                                }
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "industrial_miner_specific": {
-                                            "type": "section",
-                                            "label": "Industrial Miner - Specific CGL Coverage Questions:",
-                                            "width": 12,
-                                            "rows": [
+                                                },
                                                 {
                                                     "industrial_miner_specific_question1": {
-                                                        "type": "choice",
-                                                        "label": "A. Is there a formal written safety and security policy in effect for each facility where your equipment is operational?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Any foreign operations, foreign products distributed in the USA, or USA products sold/distributed in foreign countries",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Industrial-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -1797,18 +1737,11 @@
                                                 },
                                                 {
                                                     "industrial_miner_specific_question2": {
-                                                        "type": "choice",
-                                                        "label": "B. Does your hosting contract require you to insure your own equipment that is in the possession of the hosting/co-location company?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Is there a formal written safety and security policy in effect for each location listed?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Industrial-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -1832,18 +1765,263 @@
                                                 },
                                                 {
                                                     "industrial_miner_specific_question3": {
-                                                        "type": "choice",
-                                                        "label": "C. Do you lease your equipment to others?",
-                                                        "options": {
-                                                            "yes": "Yes",
-                                                            "no": "No"
-                                                        },
+                                                        "type": "checkbox",
+                                                        "label": "Have any crimes occured or been atempted at any of your locations within the last 3 years?",
                                                         "width": 12,
                                                         "required": true,
-                                                        "expanded": true,
-                                                        "multiple": false,
-                                                        "help": null,
-                                                        "default": null,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question4": {
+                                                        "type": "checkbox",
+                                                        "label": "Does the businesses' promotional literature make any representations about the safety or security of any location and/or premises?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question5": {
+                                                        "type": "checkbox",
+                                                        "label": "Any demolition, structural alterations, construction, renovation and/or remodeling projects contemplated at any of the listed locations?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question6": {
+                                                        "type": "checkbox",
+                                                        "label": "Any machinery or equipment loaned or rented to others?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question7": {
+                                                        "type": "checkbox",
+                                                        "label": "Any operations related to cryptocurrency mining sold, acquired or discontinued in the last 5 years?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question8": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you have past, present or discontinued operations involve(d) with storing, treating, discharging, applying, disposing or transporting of hazardous material(s) [i.e. landfills, waste, fuel tanks, biohazardous or radioactive material, etc.]?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question9": {
+                                                        "type": "checkbox",
+                                                        "label": "Any exposure to radioactive/nuclear material?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question10": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you host equipment other than your own?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question11": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you offer guarantees, warrranties, hold harmless agreements in any of your client or vendor contracts?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question12": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you lease equipment to others?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Industrial-Miner Specific Question",
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
