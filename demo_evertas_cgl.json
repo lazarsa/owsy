@@ -1,0 +1,1879 @@
+{
+    "crypto_pc_application": {
+        "label": "Cryptocurrency Property & Casualty Insurance Application",
+        "rows": [
+            {
+                "general_info": {
+                    "type": "section",
+                    "label": "General Information",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "business_entity": {
+                                "type": "choice",
+                                "label": "Business Entity:",
+                                "options": {
+                                    "partnership": "Partnership",
+                                    "llc": "LLC",
+                                    "s_corp": "S-Corp",
+                                    "c_corp": "C-Corp",
+                                    "other": "Other"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "If \"Other\", please describe.",
+                                "default": null,
+                                "decision": null
+                            },
+                            "other_business_entity": {
+                                "type": "text",
+                                "label": "Other:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "business_established_date": {
+                                "type": "date",
+                                "label": "Date the Business Was Established:",
+                                "width": 3,
+                                "required": true,
+                                "help": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "business_type": {
+                                "type": "section",
+                                "label": "Type of Business:",
+                                "width": 12,
+                                "rows": [
+                                    {
+                                        "retail_miner": {
+                                            "type": "checkbox",
+                                            "label": "Retail Miner",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., mining crypto and use of a co-location provider to operate/maintain ASICs",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "industrial_miner": {
+                                            "type": "checkbox",
+                                            "label": "Industrial Miner",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., mining of crypto and owning or leasing the commercial space where the operation takes place",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "co_location_provider": {
+                                            "type": "checkbox",
+                                            "label": "Co-location Provider",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., maintaining/operating other crypto miners' ASICs for a fee",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "business_description": {
+                                "type": "text",
+                                "label": "Description of Business Operations:",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "has_other_business_ventures": {
+                                "type": "checkbox",
+                                "label": "Other Business Ventures?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "has_other_business_ventures_desc": {
+                                "type": "text",
+                                "label": "Please describe.",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_has_other_business_ventures",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "parent_company_info": {
+                                "type": "checkbox",
+                                "label": "Subsidiary of Another Entity?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the parent company, relationship description, and percentage ownership breakdown.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "parent_company_info_desc": {
+                                "type": "text",
+                                "label": "Please advise the parent company, relationship description, and percentage ownership breakdown.",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_parent_company_info",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "subsidiary_info": {
+                                "type": "checkbox",
+                                "label": "Any Subsidiaries?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the subsidiary company name(s), relationship description, and percentage ownership breakdown.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "subsidiary_info_desc": {
+                                "type": "text",
+                                "label": "Please advise the subsidiary company name(s), relationship description, and percentage ownership breakdown.",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_subsidiary_info",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "exposure_to_chemicals": {
+                                "type": "checkbox",
+                                "label": "Exposure to Flammables, Explosives, Chemicals, Oil or Gas?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "exposure_to_chemicals_desc": {
+                                "type": "text",
+                                "label": "Please describe.",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_exposure_to_chemicals",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_existing_crypto_insurance": {
+                                "type": "checkbox",
+                                "label": "Existing Insurance for Cryptocurrency Mining/Hosting?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please provide a copy of current policy and 5 years loss runs, if available.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "has_existing_crypto_insurance_desc": {
+                                "type": "text",
+                                "label": "Please provide a copy of current policy and 5 years loss runs, if available.",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_has_existing_crypto_insurance",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_other_evertas_policy": {
+                                "type": "checkbox",
+                                "label": "Other Insurance With Evertas?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise your policy number and effective dates.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "has_other_evertas_policy_desc": {
+                                "type": "text",
+                                "label": "Please advise your policy number and effective dates.",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_general_info_has_other_evertas_policy",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "risk_history": {
+                    "type": "section",
+                    "label": "Risk History",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "past_declined_coverage": {
+                                "type": "checkbox",
+                                "label": "Any Policy or Coverage Declined/Cancelled/Non-Renewed During the Prior 3 Years for any Premises or Operations?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please provide details.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "past_declined_coverage_details": {
+                                "type": "choice",
+                                "label": "Please Provide Details:",
+                                "options": {
+                                    "non_payment": "Non-payment",
+                                    "non_renewal": "Non-renewal",
+                                    "no_carrier": "Agent no longer represents carrier",
+                                    "underwriting": "Underwriting",
+                                    "condition_corrected": "Condition corrected",
+                                    "other": "Other"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "past_declined_coverage_condition_corrected": {
+                                "type": "text",
+                                "label": "Condition Corrected:",
+                                "width": 6,
+                                "required": false,
+                                "help": "Populate only if \"Condition Corrected\" is selected.",
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "past_declined_coverage_other": {
+                                "type": "text",
+                                "label": "Other:",
+                                "width": 6,
+                                "required": false,
+                                "help": "Populate only if \"Other\" is selected.",
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "abuse_discrimination_claims": {
+                                "type": "checkbox",
+                                "label": "Any Past Losses or Claims Relating to Sexual Abuse or Molestation Allegations, Discrimination or Negligent Hiring?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "abuse_discrimination_claims_description": {
+                                "type": "text",
+                                "label": "Please Describe:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_abuse_discrimination_claims",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "fraud_conviction": {
+                                "type": "checkbox",
+                                "label": "During the Last 5 Years (10 in RI), Has There Been Indictment or Conviction of Any Degree of the Crime of Fraud, Bribery, Arson or Any Other Arson-Related Crime in Connection With This or Any Other Prioperty?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "fraud_conviction_description": {
+                                "type": "text",
+                                "label": "Please Describe:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_fraud_conviction",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "unresolved_code_violations": {
+                                "type": "checkbox",
+                                "label": "Any Uncorrected Fire, Electrical, and/or Safety Code Violations?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "unresolved_code_violations_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "unresolved_code_violations_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "unresolved_code_violations_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "unresolved_code_violations_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "bankruptcy_history": {
+                                "type": "checkbox",
+                                "label": "Has There Been a Foreclosure, Repossesion, Bankruptcy or Filing for Bankruptcy in the Last 5 Years?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "bankruptcy_history_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "bankruptcy_history_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "bankruptcy_history_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "bankruptcy_history_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "felony_or_lawsuits": {
+                                "type": "checkbox",
+                                "label": "Has There Been Any Prior Felony Conviction and/or Involvement in Business Related Lawsuits, Meditations or Arbitrations in the Past 5 Years?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "felony_or_lawsuits_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "felony_or_lawsuits_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "felony_or_lawsuits_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "felony_or_lawsuits_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_judgments_or_liens": {
+                                "type": "checkbox",
+                                "label": "Have there been any judgments or liens in past 5 years?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "has_judgments_or_liens_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "has_judgments_or_liens_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_judgments_or_liens_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "has_judgments_or_liens_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "business_in_trust": {
+                                "type": "checkbox",
+                                "label": "Business Placed in a Trust?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the name of the trust.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "name_of_trust": {
+                                "type": "text",
+                                "label": "Name of the Trust:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_business_in_trust",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "regulatory_disputes": {
+                                "type": "checkbox",
+                                "label": "Currently Involved in Any Regulatory Dispute?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "regulatory_disputes_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "regulatory_disputes_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "regulatory_disputes_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "regulatory_disputes_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "licensing_disputes": {
+                                "type": "checkbox",
+                                "label": "Currently Involved in Iny Licensing Dispute?",
+                                "width": 12,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "licensing_disputes_date": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "licensing_disputes_explanation": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "licensing_disputes_resolution": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "licensing_disputes_date_of_resolution": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "insured_locations": {
+                    "type": "collection",
+                    "label": "Location(s) Insured",
+                    "rows": [
+                        {
+                            "address": {
+                                "type": "text",
+                                "label": "Address",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "city": {
+                                "type": "text",
+                                "label": "City",
+                                "width": 3,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "county": {
+                                "type": "text",
+                                "label": "County",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "state": {
+                                "type": "text",
+                                "label": "State",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "zip": {
+                                "type": "text",
+                                "label": "ZIP Code",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "location_number": {
+                                "type": "text",
+                                "label": "Location Number",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "commercial_general_liability": {
+                                "type": "section",
+                                "label": "Commercial General Liability",
+                                "width": 12,
+                                "rows": [
+                                    {
+                                        "effective_date": {
+                                            "type": "date",
+                                            "label": "Requested Effective Date of Coverage:",
+                                            "width": 3,
+                                            "required": true,
+                                            "help": null,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "limits_of_coverage": {
+                                            "type": "section",
+                                            "label": "Commercial General Liability Limits of Coverage:",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "bodily_injury_property_damage": {
+                                                        "type": "checkbox",
+                                                        "label": "Bodily Injury / Property Damage Liability ($1mm / $2mm):",
+                                                        "width": 6,
+                                                        "required": true,
+                                                        "help": "Maximum available limits are $1,000,000 Per Occurence / $2,000,000 Aggregate",
+                                                        "default": false,
+                                                        "decision": null
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "deductibles": {
+                                            "type": "section",
+                                            "label": "Deductibles (select your desired deductibles):",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "deductible_1": {
+                                                        "type": "checkbox",
+                                                        "label": "$250",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_2": {
+                                                        "type": "checkbox",
+                                                        "label": "$500",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_3": {
+                                                        "type": "checkbox",
+                                                        "label": "$1,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_4": {
+                                                        "type": "checkbox",
+                                                        "label": "$2,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    }
+                                                },
+                                                {
+                                                    "deductible_5": {
+                                                        "type": "checkbox",
+                                                        "label": "$3,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_6": {
+                                                        "type": "checkbox",
+                                                        "label": "$4,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_7": {
+                                                        "type": "checkbox",
+                                                        "label": "$5,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_8": {
+                                                        "type": "checkbox",
+                                                        "label": "$10,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    }
+                                                },
+                                                {
+                                                    "deductible_9": {
+                                                        "type": "checkbox",
+                                                        "label": "$15,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_10": {
+                                                        "type": "checkbox",
+                                                        "label": "$20,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_11": {
+                                                        "type": "checkbox",
+                                                        "label": "$25,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_12": {
+                                                        "type": "checkbox",
+                                                        "label": "$50,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    }
+                                                },
+                                                {
+                                                    "deductible_13": {
+                                                        "type": "checkbox",
+                                                        "label": "$75,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    },
+                                                    "deductible_14": {
+                                                        "type": "checkbox",
+                                                        "label": "$100,000",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": false,
+                                                        "decision": null
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "location_square_footage": {
+                                            "type": "collection",
+                                            "label": "Location Square Footage",
+                                            "rows": [
+                                                {
+                                                    "location_number": {
+                                                        "type": "number",
+                                                        "label": "Location Number",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "scale": 0,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "minimum_value": null,
+                                                        "maximum_value": null,
+                                                        "grouping": true,
+                                                        "decision": null
+                                                    },
+                                                    "building_number": {
+                                                        "type": "number",
+                                                        "label": "Building Number",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "scale": 0,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "minimum_value": null,
+                                                        "maximum_value": null,
+                                                        "grouping": true,
+                                                        "decision": null
+                                                    },
+                                                    "occupied_square_footage": {
+                                                        "type": "number",
+                                                        "label": "Occupied Square Footage",
+                                                        "width": 6,
+                                                        "required": true,
+                                                        "scale": 0,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "minimum_value": null,
+                                                        "maximum_value": null,
+                                                        "grouping": true,
+                                                        "decision": null
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "operational_questions": {
+                                            "type": "section",
+                                            "label": "Operational Questions",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "operational_1": {
+                                                        "type": "choice",
+                                                        "label": "A. Liquid Immersion cooling used for all cryptocurrency mining computers at insured location(s)?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    }
+                                                },
+                                                {
+                                                    "operational_2": {
+                                                        "type": "choice",
+                                                        "label": "B. Does the hosting/co-location company have technicians/employees that are certified by the manufacturer(s)?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "retail_miner_specific": {
+                                            "type": "section",
+                                            "label": "Retail Miner - Specific CGL Coverage Questions:",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "retail_miner_specific_question1": {
+                                                        "type": "choice",
+                                                        "label": "A. Is there a formal written safety and security policy in effect for each facility where your equipment is operational?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "retail_miner_specific_question2": {
+                                                        "type": "choice",
+                                                        "label": "B. Does your hosting contract require you to insure your own equipment that is in the possession of the hosting/co-location company?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "retail_miner_specific_question3": {
+                                                        "type": "choice",
+                                                        "label": "C. Do you lease your equipment to others?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "industrial_miner_specific": {
+                                            "type": "section",
+                                            "label": "Industrial Miner - Specific CGL Coverage Questions:",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "industrial_miner_specific_question1": {
+                                                        "type": "choice",
+                                                        "label": "A. Is there a formal written safety and security policy in effect for each facility where your equipment is operational?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question2": {
+                                                        "type": "choice",
+                                                        "label": "B. Does your hosting contract require you to insure your own equipment that is in the possession of the hosting/co-location company?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "industrial_miner_specific_question3": {
+                                                        "type": "choice",
+                                                        "label": "C. Do you lease your equipment to others?",
+                                                        "options": {
+                                                            "yes": "Yes",
+                                                            "no": "No"
+                                                        },
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "expanded": true,
+                                                        "multiple": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
