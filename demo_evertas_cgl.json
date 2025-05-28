@@ -2361,6 +2361,718 @@
                                                             "default_outcome": "product_field.excluded"
                                                         }
                                                     }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question1": {
+                                                        "type": "checkbox",
+                                                        "label": "Any foreign operations, foreign products distributed in the USA, or USA products sold/distributed in foreign countries",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question1_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question1",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question2": {
+                                                        "type": "checkbox",
+                                                        "label": "Is there a formal written safety and security policy in effect for each location listed?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question3": {
+                                                        "type": "checkbox",
+                                                        "label": "Have any crimes occured or been atempted at any of your locations within the last 3 years?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question3_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question3",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question4": {
+                                                        "type": "checkbox",
+                                                        "label": "Does the businesses' promotional literature make any representations about the safety or security of any location and/or premises?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question5": {
+                                                        "type": "checkbox",
+                                                        "label": "Any demolition, structural alterations, construction, renovation and/or remodeling projects contemplated at any of the listed locations?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question5_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question5",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question6": {
+                                                        "type": "checkbox",
+                                                        "label": "Any machinery or equipment loaned or rented to others?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question6_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question6",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question7": {
+                                                        "type": "checkbox",
+                                                        "label": "Any operations related to cryptocurrency mining sold, acquired or discontinued in the last 5 years?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question7_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question7",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question8": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you have past, present or discontinued operations involve(d) with storing, treating, discharging, applying, disposing or transporting of hazardous material(s) [i.e. landfills, waste, fuel tanks, biohazardous or radioactive material, etc.]?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question8_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question8",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question9": {
+                                                        "type": "checkbox",
+                                                        "label": "Any exposure to radioactive/nuclear material?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question9_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question9",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question10": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you host equipment other than your own?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain and provide the approximate value of the non-owned equipment.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question10_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question10_value": {
+                                                        "type": "number",
+                                                        "label": "Approximate Value:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question11": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you offer guarantees, warrranties, hold harmless agreements in any of your client or vendor contracts?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question11_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question11",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question12": {
+                                                        "type": "checkbox",
+                                                        "label": "Do your hosting client contracts require your clients to insure their own equipment that is in your possession and under your maintenance?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"No\", please explain.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question12_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question12",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "false"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question13": {
+                                                        "type": "checkbox",
+                                                        "label": "Do you lease equipment to others?",
+                                                        "width": 12,
+                                                        "required": true,
+                                                        "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain and provide a sample of your leasing contract.",
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "co_location_provider_specific_question13_description": {
+                                                        "type": "text",
+                                                        "label": "Explanation:",
+                                                        "width": 6,
+                                                        "required": false,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": {
+                                                            "or_conditions": [
+                                                                {
+                                                                    "and_conditions": [
+                                                                        {
+                                                                            "conditions": [
+                                                                                {
+                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question13",
+                                                                                    "comparison": "is_equal",
+                                                                                    "value": "true"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ],
+                                                                    "outcome": "product_field.required"
+                                                                }
+                                                            ],
+                                                            "default_outcome": "product_field.excluded"
+                                                        }
+                                                    }
                                                 }
                                             ]
                                         }
