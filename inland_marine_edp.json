@@ -1,0 +1,2708 @@
+{
+    "inland_marine_edp_application": {
+        "label": "Inland Marine Electronic Data Processing (EDP)",
+        "rows": [
+            {
+                "general_information": {
+                    "type": "section",
+                    "label": "General Information",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "business_type": {
+                                "type": "choice",
+                                "label": "Business Entity Type",
+                                "options": {
+                                    "partnership": "Partnership",
+                                    "llc": "LLC",
+                                    "s_corp": "S-Corp",
+                                    "c_corp": "C-Corp",
+                                    "other": "Other"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Enter Business Entity Type",
+                                "default": null,
+                                "decision": null
+                            },
+                            "established_date": {
+                                "type": "date",
+                                "label": "Date Business Established",
+                                "width": 6,
+                                "required": true,
+                                "help": "Select Date Business Established",
+                                "decision": null
+                            }
+                        },
+                        {
+                            "business_model": {
+                                "type": "section",
+                                "label": "Type of Business:",
+                                "width": 12,
+                                "rows": [
+                                    {
+                                        "retail_miner": {
+                                            "type": "checkbox",
+                                            "label": "Retail Miner",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., mining crypto and use of a co-location provider to operate/maintain ASICs",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "industrial_miner": {
+                                            "type": "checkbox",
+                                            "label": "Industrial Miner",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., mining of crypto and owning or leasing the commercial space where the operation takes place",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "co_location_provider": {
+                                            "type": "checkbox",
+                                            "label": "Co-location Provider",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": "e.g., maintaining/operating other crypto miners' ASICs for a fee",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "description": {
+                                "type": "text",
+                                "label": "Description of Business Operations",
+                                "width": 12,
+                                "required": true,
+                                "help": "Enter Description of Business Operations",
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "other_business": {
+                                "type": "checkbox",
+                                "label": "Is the applicant involved in any business or ventures not covered by their “Description of Business Operations” above?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "other_business_details": {
+                                "type": "text",
+                                "label": "Describe:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_other_business",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "is_subsidiary": {
+                                "type": "checkbox",
+                                "label": "Is the applicant business a subsidiary of another entity?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the parent company, relationship description and percentage ownership breakdown.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "subsidiary_details1": {
+                                "type": "text",
+                                "label": "Parent company:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_is_subsidiary",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subsidiary_details2": {
+                                "type": "text",
+                                "label": "Relationship description:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_is_subsidiary",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subsidiary_details3": {
+                                "type": "text",
+                                "label": "% Ownership Breakdown:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_is_subsidiary",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_subsidiaries": {
+                                "type": "checkbox",
+                                "label": "Does the applicant have any subsidiaries?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the subsidiart company name(s), relationship description and percentage ownership breakdown.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "subsidiaries_details1": {
+                                "type": "text",
+                                "label": "Subsidiary Company Name(s):",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_has_subsidiaries",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subsidiaries_details2": {
+                                "type": "text",
+                                "label": "Relationship Description:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_has_subsidiaries",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subsidiaries_details3": {
+                                "type": "text",
+                                "label": "% Ownership Breakdown:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_has_subsidiaries",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "has_exposures": {
+                                "type": "checkbox",
+                                "label": "Do your operations have any exposure to flammables, explosives, chemicals, oil, and/or gas?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "exposures_details": {
+                                "type": "text",
+                                "label": "Describe",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_has_exposures",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "existing_insurance": {
+                                "type": "checkbox",
+                                "label": "Do you have existing insurance for cryptocurrency mining and/or hosting?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please provide a copy of your current policy and 5 years loss runs, if available.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "existing_insurance_details": {
+                                "type": "text",
+                                "label": "Provide copy of policy and 5 years loss runs",
+                                "width": 12,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_existing_insurance",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "other_evertas": {
+                                "type": "checkbox",
+                                "label": "Does your company have any other insurance with Evertas?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise your policy number and effective dates.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "other_evertas_details1": {
+                                "type": "number",
+                                "label": "Policy Number:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_other_evertas",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "other_evertas_details2": {
+                                "type": "date",
+                                "label": "Effective Date:",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_other_evertas",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "declined_coverage": {
+                                "type": "checkbox",
+                                "label": "Have you had any policy or coverage declined, cancelled, or non-renewed during the prior three (3) years for any premises or operations?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please provide details.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "declined_details1": {
+                                "type": "choice",
+                                "label": "Please Provide Details:",
+                                "options": {
+                                    "non_payment": "Non-payment",
+                                    "non_renewal": "Non-renewal",
+                                    "no_carrier": "Agent no longer represents carrier",
+                                    "underwriting": "Underwriting",
+                                    "condition_corrected": "Condition corrected",
+                                    "other": "Other"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "declined_details2": {
+                                "type": "text",
+                                "label": "Condition Corrected:",
+                                "width": 6,
+                                "required": false,
+                                "help": "Populate only if \"Condition Corrected\" is selected.",
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "declined_details3": {
+                                "type": "text",
+                                "label": "Other:",
+                                "width": 6,
+                                "required": false,
+                                "help": "Populate only if \"Other\" is selected.",
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_declined_coverage",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "past_losses": {
+                                "type": "checkbox",
+                                "label": "Any past losses or claims relating to sexual abuse or molestation allegations, discrimination, or negligent hiring?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "past_losses_details": {
+                                "type": "text",
+                                "label": "Describe:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_past_losses",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "fraud_crime": {
+                                "type": "checkbox",
+                                "label": "During the last five (5) years (ten [10] in RI), has any applicant been indicted for or convicted of any degree of the crime of fraud, bribery, arson, or any other arson-related crime in connection with this or any other property?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please describe.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "fraud_crime_details": {
+                                "type": "text",
+                                "label": "Describe:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_fraud_crime",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "code_violations": {
+                                "type": "checkbox",
+                                "label": "Any uncorrected fire, electrical, and/or safety code violations?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "code_violations_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "code_violations_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "code_violations_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "code_violations_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_code_violations",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "foreclosure": {
+                                "type": "checkbox",
+                                "label": "Has applicant had a foreclosure, repossession, bankruptcy or filed for bankruptcy in the last five (5) years?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "foreclosure_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_foreclosure",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "foreclosure_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_foreclosure",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "foreclosure_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_foreclosure",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "foreclosure_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_foreclosure",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "felony_conviction": {
+                                "type": "checkbox",
+                                "label": "Do any named insured(s), officer(s), owner(s), or partner(s) have a prior felony conviction and/or been involved in business related lawsuits, mediations or arbitrations in the past 5 years?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "felony_conviction_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_felony_conviction",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "felony_conviction_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_felony_conviction",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "felony_conviction_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_felony_conviction",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "felony_conviction_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_felony_conviction",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "judgement_lien": {
+                                "type": "checkbox",
+                                "label": "Have you had a judgement or lien during the last five (5) years?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "judgement_lien_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_judgement_lien",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "judgement_lien_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_judgement_lien",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "judgement_lien_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_judgement_lien",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "judgement_lien_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_judgement_lien",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "placed_in_trust": {
+                                "type": "checkbox",
+                                "label": "Has your business been placed in a trust?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the name of the trust.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "placed_in_trust_details": {
+                                "type": "text",
+                                "label": "Name of the Trust:",
+                                "width": 12,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_placed_in_trust",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "regulatory_dispute": {
+                                "type": "checkbox",
+                                "label": "Are you currently in or have knowledge of being involved in any regulatory dispute?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "regulatory_dispute_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_regulatory_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "regulatory_dispute_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_regulatory_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "regulatory_dispute_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_regulatory_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "regulatory_dispute_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_regulatory_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "licensing_dispute": {
+                                "type": "checkbox",
+                                "label": "Are you currently in or have knowledge of being involved in any licensing dispute?",
+                                "width": 9,
+                                "required": false,
+                                "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "licensing_dispute_details1": {
+                                "type": "date",
+                                "label": "Date:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_licensing_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "licensing_dispute_details2": {
+                                "type": "text",
+                                "label": "Explanation:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_licensing_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "licensing_dispute_details3": {
+                                "type": "text",
+                                "label": "Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_licensing_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "licensing_dispute_details4": {
+                                "type": "date",
+                                "label": "Date of Resolution/Expected Date of Resolution:",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "inland_marine_edp_application_general_information_licensing_dispute",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "insured_locations": {
+                    "type": "collection",
+                    "label": "Location(s) Insured",
+                    "rows": [
+                        {
+                            "location_number": {
+                                "type": "text",
+                                "label": "Address",
+                                "width": 3,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "street": {
+                                "type": "text",
+                                "label": "Street",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "address_line_2": {
+                                "type": "text",
+                                "label": "Address Line 2",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "city": {
+                                "type": "text",
+                                "label": "City",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "state": {
+                                "type": "choice",
+                                "label": "State",
+                                "options": {
+                                    "al": "Alabama",
+                                    "ak": "Alaska",
+                                    "az": "Arizona",
+                                    "ar": "Arkansas",
+                                    "ca": "California",
+                                    "co": "Colorado",
+                                    "ct": "Connecticut",
+                                    "de": "Delaware",
+                                    "fl": "Florida",
+                                    "ga": "Georgia",
+                                    "hi": "Hawaii",
+                                    "id": "Idaho",
+                                    "il": "Illinois",
+                                    "in": "Indiana",
+                                    "ia": "Iowa",
+                                    "ks": "Kansas",
+                                    "ky": "Kentucky",
+                                    "la": "Louisiana",
+                                    "me": "Maine",
+                                    "md": "Maryland",
+                                    "ma": "Massachusetts",
+                                    "mi": "Michigan",
+                                    "mn": "Minnesota",
+                                    "ms": "Mississippi",
+                                    "mo": "Missouri",
+                                    "mt": "Montana",
+                                    "ne": "Nebraska",
+                                    "nv": "Nevada",
+                                    "nh": "New Hampshire",
+                                    "nj": "New Jersey",
+                                    "nm": "New Mexico",
+                                    "ny": "New York",
+                                    "nc": "North Carolina",
+                                    "nd": "North Dakota",
+                                    "oh": "Ohio",
+                                    "ok": "Oklahoma",
+                                    "or": "Oregon",
+                                    "pa": "Pennsylvania",
+                                    "ri": "Rhode Island",
+                                    "sc": "South Carolina",
+                                    "sd": "South Dakota",
+                                    "tn": "Tennessee",
+                                    "tx": "Texas",
+                                    "ut": "Utah",
+                                    "vt": "Vermont",
+                                    "va": "Virginia",
+                                    "wa": "Washington",
+                                    "wv": "West Virginia",
+                                    "wi": "Wisconsin",
+                                    "wy": "Wyoming"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "zip": {
+                                "type": "text",
+                                "label": "ZIP",
+                                "width": 3,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "county": {
+                                "type": "text",
+                                "label": "County",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "inland_marine_electronic_data_processing": {
+                                "type": "section",
+                                "label": "Inland Marine Electronic Data Processing (EDP) Coverage",
+                                "width": 12,
+                                "rows": [
+                                    {
+                                        "inland_marine_coverage": {
+                                            "type": "coverage",
+                                            "label": "Coverage",
+                                            "help": null,
+                                            "coverage_code": "mar",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "third_party": {
+                                            "type": "checkbox",
+                                            "label": "Do you use a third party to host or co-locate your cryptocurrency mining equipment?",
+                                            "width": 12,
+                                            "required": true,
+                                            "help": "If \"Yes\", please provide additional info.",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "third_party_name": {
+                                            "type": "text",
+                                            "label": "Name of the co-location provider:",
+                                            "width": 6,
+                                            "required": true,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_third_party",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "third_party_phone_number": {
+                                            "type": "text",
+                                            "label": "Contact person phone number:",
+                                            "width": 3,
+                                            "required": true,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_third_party",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "third_party_email": {
+                                            "type": "text",
+                                            "label": "Contact person email:",
+                                            "width": 3,
+                                            "required": true,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_third_party",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "property_insured": {
+                                            "type": "collection",
+                                            "label": "Inland Marine EDP Property Insured",
+                                            "rows": [
+                                                {
+                                                    "location_number": {
+                                                        "type": "text",
+                                                        "label": "Location Number:",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    }
+                                                },
+                                                {
+                                                    "count": {
+                                                        "type": "number",
+                                                        "label": "Count:",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    },
+                                                    "make_model": {
+                                                        "type": "text",
+                                                        "label": "Make/Model:",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    },
+                                                    "stated_value": {
+                                                        "type": "number",
+                                                        "label": "Stated Value Per Miner:",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    },
+                                                    "total_limit": {
+                                                        "type": "number",
+                                                        "label": "Total Limit of Coverage:",
+                                                        "width": 3,
+                                                        "required": true,
+                                                        "help": null,
+                                                        "default": null,
+                                                        "decision": null
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "deductibles": {
+                                            "type": "section",
+                                            "label": "Deductibles (select your desired deductibles)",
+                                            "width": 12,
+                                            "rows": [
+                                                {
+                                                    "fire_deductibles": {
+                                                        "type": "section",
+                                                        "label": "Fire Deductibles - per occurrence",
+                                                        "width": 12,
+                                                        "rows": [
+                                                            {
+                                                                "deductible_1": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$5,000",
+                                                                    "width": 3,
+                                                                    "required": true,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_2": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$10,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_3": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$25,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                }
+                                                            },
+                                                            {
+                                                                "deductible_4": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$50,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_5": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$75,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_6": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$100,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                }
+                                                            },
+                                                            {
+                                                                "deductible_7": {
+                                                                    "type": "checkbox",
+                                                                    "label": "5%",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_8": {
+                                                                    "type": "checkbox",
+                                                                    "label": "Other %/$ Value",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_9": {
+                                                                    "type": "text",
+                                                                    "label": "Enter value:",
+                                                                    "width": 3,
+                                                                    "required": true,
+                                                                    "help": null,
+                                                                    "decision": {
+                                                                        "or_conditions": [
+                                                                            {
+                                                                                "and_conditions": [
+                                                                                    {
+                                                                                        "conditions": [
+                                                                                            {
+                                                                                                "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_deductibles_fire_deductibles_deductible_8",
+                                                                                                "comparison": "is_equal",
+                                                                                                "value": "true"
+                                                                                            }
+                                                                                        ]
+                                                                                    }
+                                                                                ],
+                                                                                "outcome": "product_field.required"
+                                                                            }
+                                                                        ],
+                                                                        "default_outcome": "product_field.excluded"
+                                                                    }
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "extended_deductibles": {
+                                                        "type": "section",
+                                                        "label": "Extended Coverage Deductibles (i.e., Wind/Hail/Named Storm) ($10,000 Minimum) - per occurrence",
+                                                        "width": 12,
+                                                        "rows": [
+                                                            {
+                                                                "deductible_1": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$10,000",
+                                                                    "width": 3,
+                                                                    "required": true,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_2": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$25,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_3": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$50,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                }
+                                                            },
+                                                            {
+                                                                "deductible_4": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$75,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_5": {
+                                                                    "type": "checkbox",
+                                                                    "label": "$100,000",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                }
+                                                            },
+                                                            {
+                                                                "deductible_6": {
+                                                                    "type": "checkbox",
+                                                                    "label": "3%",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_7": {
+                                                                    "type": "checkbox",
+                                                                    "label": "4%",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                },
+                                                                "deductible_8": {
+                                                                    "type": "checkbox",
+                                                                    "label": "5%",
+                                                                    "width": 3,
+                                                                    "required": false,
+                                                                    "help": null,
+                                                                    "decision": null
+                                                                }
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "electrical_supply": {
+                                            "type": "checkbox",
+                                            "label": "On-Site Electrical and Power Supply Disturbance and Website Servers",
+                                            "width": 12,
+                                            "required": false,
+                                            "help": "Optional Additional Coverage",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "monthly_expanses_coverage": {
+                                            "type": "checkbox",
+                                            "label": "Monthly operational expense coverage (i.e., debt[principal & interest], payroll, power/electrical costs)",
+                                            "width": 12,
+                                            "required": false,
+                                            "help": "Optional Business Interruption Coverage | If \"Yes\", note your total monthly expense/cost for your cryptocurrency mining operation.",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "monthly_expanses": {
+                                            "type": "number",
+                                            "label": "Monthly expense/cost:",
+                                            "width": 3,
+                                            "required": true,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_monthly_expanses_coverage",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "mining_hardware": {
+                                            "type": "checkbox",
+                                            "label": "Does your cryptocurrency mining hardware, or any hardware in your care, custody, and/or control, operate above 110% of its/their efficiency via firmware upgrades/updates or other means (e.g., 'overclocking')?",
+                                            "width": 12,
+                                            "required": false,
+                                            "help": "If \"Yes\", please advise what percentage of the computers are 'overclocked' and at which building(s) and/or container number(s) and at which location(s).",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "mining_hardware_optional1": {
+                                            "type": "number",
+                                            "label": "Percentage of 'overclocked' computers:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "mining_hardware_optional2": {
+                                            "type": "text",
+                                            "label": "Building(s) and/or container(s) number:",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "mining_hardware_optional3": {
+                                            "type": "text",
+                                            "label": "Location:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "mining_hardware_cooling": {
+                                            "type": "checkbox",
+                                            "label": "Is any cryptocurrency mining hardware cooled using liquid immersion?",
+                                            "required": false,
+                                            "help": "If \"Yes\", please advise what percentage of the computers are cooled with liquid immersion and at which building(s) and/or container number(s) and at which location(s).",
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "mining_hardware_cooling_optional1": {
+                                            "type": "number",
+                                            "label": "Percentage of cooled computers:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware_cooling",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "mining_hardware_cooling_optional2": {
+                                            "type": "text",
+                                            "label": "Building(s) and/or container(s) number:",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware_cooling",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "mining_hardware_cooling_optional3": {
+                                            "type": "text",
+                                            "label": "Location:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_mining_hardware_cooling",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation": {
+                                            "type": "checkbox",
+                                            "label": "Risk Mitigation",
+                                            "width": 12,
+                                            "required": false,
+                                            "help": "Please advise which location number(s) have the following [location numbers should correspond to the location(s) listed in item Location(s) Insured; each location will be inspected to verify the following answers.",
+                                            "default": false,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_1": {
+                                            "type": "checkbox",
+                                            "label": "A. Building entrances are locked",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_2": {
+                                            "type": "checkbox",
+                                            "label": "B. Fire suppression system",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_3": {
+                                            "type": "checkbox",
+                                            "label": "C. Active centrally monitored burglar alarm",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_4": {
+                                            "type": "checkbox",
+                                            "label": "D. Active centrally monitored fire alarm",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_5": {
+                                            "type": "checkbox",
+                                            "label": "E. Active centrally monitored temperature alarm or monitored with a smartphone",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_6": {
+                                            "type": "checkbox",
+                                            "label": "F. Active centrally monitored heat and/or humidity alarm",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_7": {
+                                            "type": "checkbox",
+                                            "label": "G. Keypad and/or biometric entry locks",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_8": {
+                                            "type": "checkbox",
+                                            "label": "H. 24/7 surveillance cameras and/or closed-circuit television",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_9": {
+                                            "type": "checkbox",
+                                            "label": "I. 24/7 security guard(s) on premises",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_10": {
+                                            "type": "checkbox",
+                                            "label": "J. Power surge protection device(s) (e.g., Transient Voltage Surge Suppressor [TVSS])",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_11": {
+                                            "type": "checkbox",
+                                            "label": "K. Automatic back-up generator installed on-site",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_12": {
+                                            "type": "checkbox",
+                                            "label": "L. Containers / Pods / Modular Solutions where the computers operate",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_13": {
+                                            "type": "checkbox",
+                                            "label": "Locks on each container/pod",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_12",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_14": {
+                                            "type": "checkbox",
+                                            "label": "25 feet of separation between each container, on all sides, with no fire bridges (indoors & outdoors)",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_12",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_15": {
+                                            "type": "checkbox",
+                                            "label": "Fire extinguishers (in or on each container/pod)",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_12",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        },
+                                        "risk_mitigation_if_yes_16": {
+                                            "type": "checkbox",
+                                            "label": "Premises are gated/fenced and inaccessible except via secure entrance",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_12",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_17": {
+                                            "type": "checkbox",
+                                            "label": "All Containers/pods are bolted down to a concrete slab or suitably anchored to the ground",
+                                            "width": 9,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_12",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_18": {
+                                            "type": "checkbox",
+                                            "label": "M. Computers operate 'off-grid' (e.g., oil and gas extraction site in remote location)",
+                                            "width": 9,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_19": {
+                                            "type": "checkbox",
+                                            "label": "Adequate separation from power/energy/gas/oil generating equipment",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": " ",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation_if_yes_18",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "risk_mitigation_if_yes_20": {
+                                            "type": "checkbox",
+                                            "label": "N. Will client provide watcher link(s) for all insured mining computers?",
+                                            "width": 9,
+                                            "required": false,
+                                            "help": "A premium credit may apply",
+                                            "default": false,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "inland_marine_edp_application_insured_locations_inland_marine_electronic_data_processing_risk_mitigation",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.required"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
