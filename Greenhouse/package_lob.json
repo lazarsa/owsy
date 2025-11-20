@@ -1,0 +1,2202 @@
+{
+    "loc_address_step": {
+        "label": "Risk Location",
+        "rows": [
+            {
+                "loc_address": {
+                    "type": "checkbox",
+                    "label": "Location Address is the same as Mailing Address?",
+                    "width": 9,
+                    "required": false,
+                    "help": "Check if 'Yes'. Otherwise add a Location Address/es.",
+                    "default": true,
+                    "decision": null
+                }
+            },
+            {
+                "location": {
+                    "type": "collection",
+                    "label": "Location",
+                    "rows": [
+                        {
+                            "loc_address": {
+                                "type": "text",
+                                "label": "Address",
+                                "width": 6,
+                                "required": false,
+                                "help": "If different from mailing",
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_address_line_2": {
+                                "type": "text",
+                                "label": "Address Line 2",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "loc_city": {
+                                "type": "text",
+                                "label": "City",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_county": {
+                                "type": "text",
+                                "label": "County",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_zip": {
+                                "type": "number",
+                                "label": "Zip Code",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "loc_state": {
+                                "type": "text",
+                                "label": "State",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            }
+        ]
+    },
+    "req_coverage": {
+        "label": "Requested Coverage",
+        "rows": [
+            {
+                "refferal": {
+                    "type": "checkbox",
+                    "label": "Is It a Refferal?",
+                    "width": 12,
+                    "required": false,
+                    "help": null,
+                    "default": false,
+                    "decision": null
+                }
+            },
+            {
+                "reffered": {
+                    "type": "choice",
+                    "label": "Please Select:",
+                    "options": {
+                        "referred": "Reffered",
+                        "approved": "Approved",
+                        "rejected": "Rejected"
+                    },
+                    "width": 3,
+                    "required": false,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_refferal",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.optional"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                },
+                "name_reffered": {
+                    "type": "text",
+                    "label": "Authority Name",
+                    "width": 6,
+                    "required": false,
+                    "help": null,
+                    "default": null,
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_refferal",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.optional"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "gen_liab": {
+                    "type": "checkbox",
+                    "label": "Commercial General Liability",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if Commercial General Liability coverage is requested.",
+                    "default": false,
+                    "decision": null
+                },
+                "gen_liab_occ": {
+                    "type": "choice",
+                    "label": "Occurence, or Claim Made",
+                    "options": {
+                        "gen_liab_occurence": "Occurrence",
+                        "gen_liab_cm": "Claims Made"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_gen_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "gl_coverage": {
+                    "type": "coverage",
+                    "label": "General Liability",
+                    "help": null,
+                    "coverage_code": "gl",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_gen_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "gl_limits_po": {
+                    "type": "choice",
+                    "label": "General Liability Limits (Per Occurrence)",
+                    "options": {
+                        "five_hundred_thousand": "$500,000",
+                        "one_mill": "$1,000,000",
+                        "two_mill": "$2,000,000",
+                        "three_mill": "$3,000,000",
+                        "four_mill": "$4,000,000",
+                        "five_mill": "$5,000,000",
+                        "six_mill": "$6,000,000",
+                        "seven_mill": "$7,000,000",
+                        "eight_mill": "$8,000,000",
+                        "nine_mill": "$9,000,000",
+                        "ten_mill": "$10,000,000"
+                    },
+                    "width": 3,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select General Liability (Per Occurrence) limit.",
+                    "default": "one_mill",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_gen_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                },
+                "gl_limits_agg": {
+                    "type": "choice",
+                    "label": "General Liability Limits (General Aggregate)",
+                    "options": {
+                        "five_hundred_thousand": "$500,000",
+                        "one_mill": "$1,000,000",
+                        "two_mill": "$2,000,000",
+                        "three_mill": "$3,000,000",
+                        "four_mill": "$4,000,000",
+                        "five_mill": "$5,000,000",
+                        "six_mill": "$6,000,000",
+                        "seven_mill": "$7,000,000",
+                        "eight_mill": "$8,000,000",
+                        "nine_mill": "$9,000,000",
+                        "ten_mill": "$10,000,000"
+                    },
+                    "width": 3,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select General Liability (General Aggregate) limit.",
+                    "default": "two_mill",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_gen_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                },
+                "gl_deductible": {
+                    "type": "choice",
+                    "label": "General Liability Deductible",
+                    "options": {
+                        "one_thousand": "$1,000",
+                        "two_thousand_five_hundred": "$2,500",
+                        "five_thousand": "$5,000",
+                        "ten_thousand": "$10,000",
+                        "fifteen_thousand": "$15,000 ",
+                        "twenty_thousand": "$20,000",
+                        "twenty_five_thousand": "$25,000",
+                        "fifty_thousand": "$50,000",
+                        "seventy_five_thousand": "$75,000",
+                        "hundred_thousand": "$100,000",
+                        "hundred_fifty_thousand": "$150,000",
+                        "two_hundred_fifty_thousand": "$250,000"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select General Liability deductible amount",
+                    "default": "one_thousand",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_gen_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "pol_liab": {
+                    "type": "checkbox",
+                    "label": "Contractors Pollution Liability",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if Contractors Pollution Liability coverage is requested.",
+                    "default": false,
+                    "decision": null
+                },
+                "pol_liab_occ": {
+                    "type": "choice",
+                    "label": "Occurence, or Claim Made",
+                    "options": {
+                        "pol_liab_occurence": "Occurrence",
+                        "pol_liab_cm": "Claims Made"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_pol_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.optional"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "pol_coverage": {
+                    "type": "coverage",
+                    "label": "Pollution Liability",
+                    "help": null,
+                    "coverage_code": "polut",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_pol_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "pol_limits_po": {
+                    "type": "choice",
+                    "label": "Pollution Liability Limits (Per Occurrence)",
+                    "options": {
+                        "five_hundred_thousand": "$500,000",
+                        "one_mill": "$1,000,000",
+                        "two_mill": "$2,000,000",
+                        "three_mill": "$3,000,000",
+                        "four_mill": "$4,000,000",
+                        "five_mill": "$5,000,000",
+                        "six_mill": "$6,000,000",
+                        "seven_mill": "$7,000,000",
+                        "eight_mill": "$8,000,000",
+                        "nine_mill": "$9,000,000",
+                        "ten_mill": "$10,000,000"
+                    },
+                    "width": 3,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select Pollution Liability (Per Occurrence) limit.",
+                    "default": "one_mill",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_pol_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                },
+                "pol_limits_agg": {
+                    "type": "choice",
+                    "label": "Pollution Liability Limits (General Aggregate)",
+                    "options": {
+                        "five_hundred_thousand": "$500,000",
+                        "one_mill": "$1,000,000",
+                        "two_mill": "$2,000,000",
+                        "three_mill": "$3,000,000",
+                        "four_mill": "$4,000,000",
+                        "five_mill": "$5,000,000",
+                        "six_mill": "$6,000,000",
+                        "seven_mill": "$7,000,000",
+                        "eight_mill": "$8,000,000",
+                        "nine_mill": "$9,000,000",
+                        "ten_mill": "$10,000,000"
+                    },
+                    "width": 3,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select Pollution Liability (General Aggregate) limit.",
+                    "default": "two_mill",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_pol_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                },
+                "pol_deductible": {
+                    "type": "choice",
+                    "label": "Pollution Liability Deductible",
+                    "options": {
+                        "one_thousand": "$1,000",
+                        "two_thousand_five_hundred": "$2,500",
+                        "five_thousand": "$5,000",
+                        "ten_thousand": "$10,000",
+                        "fifteen_thousand": "$15,000 ",
+                        "twenty_thousand": "$20,000",
+                        "twenty_five_thousand": "$25,000",
+                        "fifty_thousand": "$50,000",
+                        "seventy_five_thousand": "$75,000",
+                        "hundred_thousand": "$100,000",
+                        "hundred_fifty_thousand": "$150,000",
+                        "two_hundred_fifty_thousand": "$250,000"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": "Select Pollution Liability deductible amount",
+                    "default": "one_thousand",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_pol_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "eam_liab": {
+                    "type": "checkbox",
+                    "label": "Contractors Errors and Ommisions (Claims Made Only)",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if Contractors Errors and Ommisions coverage is requested.",
+                    "default": false,
+                    "decision": null
+                }
+            },
+            {
+                "eam_coverage": {
+                    "type": "coverage",
+                    "label": "Errors and Ommisions",
+                    "help": null,
+                    "coverage_code": "cnteo",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_eam_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "leg_liab": {
+                    "type": "checkbox",
+                    "label": "Pollution Legal Liablity (Claims Made Only)",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if Pollution Legal Liablity coverage is requested.",
+                    "default": false,
+                    "decision": null
+                }
+            },
+            {
+                "leg_coverage": {
+                    "type": "coverage",
+                    "label": "Pollution Legal Liablity",
+                    "help": null,
+                    "coverage_code": "lglib",
+                    "decision": {
+                        "or_conditions": [
+                            {
+                                "and_conditions": [
+                                    {
+                                        "conditions": [
+                                            {
+                                                "identifier": "req_coverage_leg_liab",
+                                                "comparison": "is_equal",
+                                                "value": "true"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "outcome": "product_field.required"
+                            }
+                        ],
+                        "default_outcome": "product_field.excluded"
+                    }
+                }
+            },
+            {
+                "tp_pol_liab": {
+                    "type": "checkbox",
+                    "label": "Third Party Pollution Liablity",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if Third Party Pollution Liablity coverage is requested.",
+                    "default": false,
+                    "decision": null
+                },
+                "on_site_cl": {
+                    "type": "checkbox",
+                    "label": "On-Site Clean Up",
+                    "width": 6,
+                    "required": false,
+                    "help": "Check if On-Site Clean Up is requested.",
+                    "default": false,
+                    "decision": null
+                }
+            },
+            {
+                "prior_three_years": {
+                    "type": "section",
+                    "label": "Please indicate gross receipts for the prior three years:",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "pr_year_rev": {
+                                "type": "money",
+                                "label": "Prior Year Revenues",
+                                "width": 3,
+                                "required": false,
+                                "help": "Past 12 Months",
+                                "default": null,
+                                "decision": null
+                            },
+                            "pr_year_date": {
+                                "type": "choice",
+                                "label": "Specify Year:",
+                                "options": {
+                                    "past": "2024",
+                                    "current": "2025",
+                                    "upcoming": "2026"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Please select the prior year.",
+                                "default": "past",
+                                "decision": null
+                            }
+                        },
+                        {
+                            "cur_year_rev": {
+                                "type": "money",
+                                "label": "Current Year Revenues",
+                                "width": 3,
+                                "required": false,
+                                "help": "Current 12 Months",
+                                "default": null,
+                                "decision": null
+                            },
+                            "cur_year_date": {
+                                "type": "choice",
+                                "label": "Specify Year:",
+                                "options": {
+                                    "past": "2024",
+                                    "current": "2025",
+                                    "upcoming": "2026"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Please select the current year.",
+                                "default": "current",
+                                "decision": null
+                            }
+                        },
+                        {
+                            "fut_year_rev": {
+                                "type": "money",
+                                "label": "Estimated Revenues",
+                                "width": 3,
+                                "required": false,
+                                "help": "Upcoming 12 Months",
+                                "default": null,
+                                "decision": null
+                            },
+                            "fut_year_date": {
+                                "type": "choice",
+                                "label": "Specify Year:",
+                                "options": {
+                                    "past": "2024",
+                                    "current": "2025",
+                                    "upcoming": "2026"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Please select the upcoming year.",
+                                "default": "upcoming",
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "env_con_collection": {
+                    "type": "section",
+                    "label": "Revenue by Operation",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "total_revenue_entered": {
+                                "type": "expression",
+                                "label": "Total Revenue Entered:",
+                                "width": 3,
+                                "help": "This should match with \"Current Year Revenues\".",
+                                "expression": "format_number(sum(req_coverage_env_con_collection_env_col_env_con_3),2)"
+                            },
+                            "total_revenue_missing": {
+                                "type": "expression",
+                                "label": "Unalocated Revenue:",
+                                "width": 3,
+                                "help": "This should be 0.",
+                                "expression": "format_number(ifnull(req_coverage_prior_three_years_cur_year_rev,0)-sum(req_coverage_env_con_collection_env_col_env_con_3),2)"
+                            }
+                        },
+                        {
+                            "env_col": {
+                                "type": "collection",
+                                "label": "Revenue",
+                                "rows": [
+                                    {
+                                        "env_con_1": {
+                                            "type": "choice",
+                                            "label": "Operation Type:",
+                                            "options": {
+                                                "type_1": "Above Ground Storage Tank Installation",
+                                                "type_2": "Above Ground Storage Tank Removal",
+                                                "type_3": "Asbestos Abatement",
+                                                "type_4": "Bio Remediation",
+                                                "type_5": "Drilling (not oil/gas)",
+                                                "type_6": "Emergency Response",
+                                                "type_7": "Haz Mat Clean UpHaz Mat Clean Up",
+                                                "type_8": "Haz Mat Packing / Pickup",
+                                                "type_9": "Lead Abatement",
+                                                "type_10": "Liquid Waste Remediation",
+                                                "type_11": "Mold Remediation",
+                                                "type_12": "PCB Removal / Remediation",
+                                                "type_13": "Soil Removal / Remediation",
+                                                "type_14": "Soil Excavation – other than petroleum",
+                                                "type_15": "Tank &/or Pipe Cleaning",
+                                                "type_16": "Underground Storage Tank Installation",
+                                                "type_17": "Underground Storage Tank Removal",
+                                                "type_18": "Wetlands Contracting",
+                                                "type_19": "Carpentry",
+                                                "type_20": "Demolition",
+                                                "type_21": "Electrical",
+                                                "type_22": "Fire / Water Restoration",
+                                                "type_23": "General Contractor",
+                                                "type_24": "Grading Contractor",
+                                                "type_25": "Industrial Cleaning",
+                                                "type_26": "Maintenance/Janitorial",
+                                                "type_27": "Masonry",
+                                                "type_28": "Mechanical Construction",
+                                                "type_29": "Metal Erection",
+                                                "type_30": "Painting",
+                                                "type_31": "Paving",
+                                                "type_32": "Pipeline Installation",
+                                                "type_33": "Plumbing",
+                                                "type_34": "Roofing",
+                                                "type_35": "Oil and Gas",
+                                                "type_36": "Street and Road",
+                                                "type_37": "Air Monitoring",
+                                                "type_38": "Analytical Laboratories",
+                                                "type_39": "Civil Engineering",
+                                                "type_40": "Environmental Compliance",
+                                                "type_41": "Environmental Impact Studies",
+                                                "type_42": "Environmental Permitting",
+                                                "type_43": "Environmental Sampling",
+                                                "type_44": "Expert Witness",
+                                                "type_45": "Geophysical",
+                                                "type_46": "Geotechnical",
+                                                "type_47": "Haz Mat Consulting",
+                                                "type_48": "Hydrogeological Investigations",
+                                                "type_49": "Indoor Air Quality",
+                                                "type_50": "Industrial Hygiene / HASP",
+                                                "type_51": "Litigation Support",
+                                                "type_52": "Manual Preparation",
+                                                "type_53": "Mold Evaluation / Consulting",
+                                                "type_54": "Phase I Environmental Assessments",
+                                                "type_55": "Phase II & III Environmental Assessments",
+                                                "type_56": "Project Management",
+                                                "type_57": "Remedial Investigation / Studies",
+                                                "type_58": "Remedial Design",
+                                                "type_59": "Remediation Oversight",
+                                                "type_60": "Safety Training",
+                                                "type_61": "Underground Storage Tank Testing",
+                                                "type_62": "Wetlands",
+                                                "type_63": "Other"
+                                            },
+                                            "width": 3,
+                                            "required": false,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": "Select Operation Type.",
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "env_con_3": {
+                                            "type": "money",
+                                            "label": "Amount of Revenue",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "env_con_4": {
+                                            "type": "text",
+                                            "label": "Describe:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": "Describe operation.",
+                                            "default": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "req_coverage_env_con_collection_env_col_env_con_1",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "type_63"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.optional"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "percent_work": {
+                    "type": "section",
+                    "label": "Percentage of Work",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "total_work_per_entered": {
+                                "type": "expression",
+                                "label": "Total Percentage of Work Entered:",
+                                "width": 3,
+                                "help": "This should be 100.",
+                                "expression": "sum(req_coverage_percent_work_percent_work_col_percent_work_2)"
+                            },
+                            "total_work_per_missing": {
+                                "type": "expression",
+                                "label": "Unalocated Percentage of Work:",
+                                "width": 3,
+                                "help": "This should be 0.",
+                                "expression": "format_number(100-ifnull(req_coverage_percent_work_total_work_per_entered,0),0)"
+                            }
+                        },
+                        {
+                            "percent_work_col": {
+                                "type": "collection",
+                                "label": "Work",
+                                "rows": [
+                                    {
+                                        "percent_work_1": {
+                                            "type": "choice",
+                                            "label": "Work Type:",
+                                            "options": {
+                                                "type_1": "Commercial",
+                                                "type_2": "Apartments",
+                                                "type_3": "Condos / Co-ops (on behalf of COA)",
+                                                "type_4": "Condos / Co-ops (on behalf of unit owner)",
+                                                "type_5": "Residential",
+                                                "type_6": "Oil / Gas Midstream",
+                                                "type_7": "Oil / Gas Upstream",
+                                                "type_8": "Oil / Gas Downstream",
+                                                "type_9": "Industrial",
+                                                "type_10": "Municipal",
+                                                "type_11": "Other"
+                                            },
+                                            "width": 3,
+                                            "required": false,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": "Select work type.",
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "percent_work_2": {
+                                            "type": "number",
+                                            "label": "Percentage of Work (%)",
+                                            "width": 3,
+                                            "required": false,
+                                            "scale": 0,
+                                            "help": null,
+                                            "default": null,
+                                            "minimum_value": null,
+                                            "maximum_value": null,
+                                            "grouping": false,
+                                            "decision": null
+                                        },
+                                        "percent_work_3": {
+                                            "type": "text",
+                                            "label": "Describe:",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": "Describe operation.",
+                                            "default": null,
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "req_coverage_percent_work_percent_work_col_percent_work_1",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "type_11"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.optional"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "general_information": {
+                    "type": "section",
+                    "label": "General Information",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "account_type": {
+                                "type": "choice",
+                                "label": "Account Type",
+                                "options": {
+                                    "environmental_contractor_consultant": "Environmental Contractor/Consultant",
+                                    "renewable_energy_consultant": "Renewable Energy/Consultant",
+                                    "oil_and_gas_contractor_consultant": "Oil and Gas Contractor/Consultant",
+                                    "commercial_contractor_consultant": "Commercial Contractor/Consultant"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "established_date": {
+                                "type": "number",
+                                "label": "Year Established:",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "debtor": {
+                                "type": "choice",
+                                "label": "1.1 Has the applicant, it's owners, members, or any related company ever had a debtor related proceeding?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "acquisitions": {
+                                "type": "choice",
+                                "label": "1.2 Have there been any acquisitions, consolidations, dissolutions, and/or mergers?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "share_comingle_employees": {
+                                "type": "choice",
+                                "label": "1.3 Does the applicant share or otherwise comingle employees?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "successor": {
+                                "type": "choice",
+                                "label": "1.4 Is the applicant a successor of any other business?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "managed_by_another_party": {
+                                "type": "choice",
+                                "label": "1.5 Is the applicant controlled, owned, or otherwise managed by another party?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "client_work": {
+                                "type": "choice",
+                                "label": "1.6 Is more than 50% of the applicant’s work performed for any one client?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "ops_states": {
+                                "type": "choice",
+                                "label": "1.7 What states do you operate in?",
+                                "options": {
+                                    "al": "Alabama",
+                                    "ak": "Alaska",
+                                    "az": "Arizona",
+                                    "ar": "Arkansas",
+                                    "ca": "California",
+                                    "co": "Colorado",
+                                    "ct": "Connecticut",
+                                    "de": "Delaware",
+                                    "fl": "Florida",
+                                    "ga": "Georgia",
+                                    "hi": "Hawaii",
+                                    "id": "Idaho",
+                                    "il": "Illinois",
+                                    "in": "Indiana",
+                                    "ia": "Iowa",
+                                    "ks": "Kansas",
+                                    "ky": "Kentucky",
+                                    "la": "Louisiana",
+                                    "me": "Maine",
+                                    "md": "Maryland",
+                                    "ma": "Massachusetts",
+                                    "mi": "Michigan",
+                                    "mn": "Minnesota",
+                                    "ms": "Mississippi",
+                                    "mo": "Missouri",
+                                    "mt": "Montana",
+                                    "ne": "Nebraska",
+                                    "nv": "Nevada",
+                                    "nh": "New Hampshire",
+                                    "nj": "New Jersey",
+                                    "nm": "New Mexico",
+                                    "ny": "New York",
+                                    "nc": "North Carolina",
+                                    "nd": "North Dakota",
+                                    "oh": "Ohio",
+                                    "ok": "Oklahoma",
+                                    "or": "Oregon",
+                                    "pa": "Pennsylvania",
+                                    "ri": "Rhode Island",
+                                    "sc": "South Carolina",
+                                    "sd": "South Dakota",
+                                    "tn": "Tennessee",
+                                    "tx": "Texas",
+                                    "ut": "Utah",
+                                    "vt": "Vermont",
+                                    "va": "Virginia",
+                                    "wa": "Washington",
+                                    "wv": "West Virginia",
+                                    "wi": "Wisconsin",
+                                    "wy": "Wyoming"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "subcontractors_employees": {
+                    "type": "section",
+                    "label": "Subcontractors and Employees",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "subcontractors": {
+                                "type": "choice",
+                                "label": "2.1 Do You Use Sub Contractors?",
+                                "options": {
+                                    "sub_yes": "Yes",
+                                    "sub_no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "subs_coverage_gl": {
+                                "type": "choice",
+                                "label": "2.2.1 Do you require subs to carry the General Liability coverage?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 3,
+                                "required": true,
+                                "expanded": true,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_subcontractors",
+                                                            "comparison": "is_equal",
+                                                            "value": "sub_yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subs_coverage_cpl": {
+                                "type": "choice",
+                                "label": "2.2.2 Do you require subs to carry the Contractors Pollution Liability coverage?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 3,
+                                "required": true,
+                                "expanded": true,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_subcontractors",
+                                                            "comparison": "is_equal",
+                                                            "value": "sub_yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "subs_coverage_pl": {
+                                "type": "choice",
+                                "label": "2.2.3 Do you require subs to carry the Professional Liability coverage?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 3,
+                                "required": true,
+                                "expanded": true,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_subcontractors",
+                                                            "comparison": "is_equal",
+                                                            "value": "sub_yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "hold_harmless": {
+                                "type": "choice",
+                                "label": "2.3 Hold Harmless, Indemnification, and Additional Insured status",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "ongoing_completed_ops": {
+                                "type": "checkbox",
+                                "label": "Ongoing and completed operations Additional Insured",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": false,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_hold_harmless",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "non_contributrory_waiver_subrogation": {
+                                "type": "checkbox",
+                                "label": "Primary non-contributrory and waiver of subrogation?",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": false,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_hold_harmless",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "policy_review": {
+                                "type": "choice",
+                                "label": "2.4 Do you review your subs entire policies for coverage issues?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "If Yes, who reviews the subcontractor's policy?",
+                                "default": null,
+                                "decision": null
+                            },
+                            "policy_review_answer": {
+                                "type": "text",
+                                "label": "2.4.1 Who reviews the subcontractor's policy?",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_subcontractors_employees_policy_review",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "temporary_labor": {
+                                "type": "choice",
+                                "label": "2.5 Do you ever use temporary labor, pay individuals on a 1099 basis or through a staffing agency?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "employees_pt": {
+                                "type": "number",
+                                "label": "2.6.1 How many Part Time employees do you have?",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "employees_ft": {
+                                "type": "number",
+                                "label": "2.6.2 How many Full Time employees do you have?",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "annual_turnover": {
+                                "type": "number",
+                                "label": "2.6.3 What is your Annual Employee Turnover rate (%)",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "risk_mgmt_pol_gnrl_qs": {
+                    "type": "section",
+                    "label": "Risk Management Policies and General Questions",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "written_contract": {
+                                "type": "choice",
+                                "label": "3.1 Do you always use a written contract, for all work 100% of the time?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "written_contract_answer": {
+                                "type": "choice",
+                                "label": "3.2 Please Select Who Typically Drafts This Contract",
+                                "options": {
+                                    "you": "You",
+                                    "client": "Your Client"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_risk_mgmt_pol_gnrl_qs_written_contract",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "corporate_counsel_contract_review": {
+                                "type": "choice",
+                                "label": "3.3 Does the applicant have corporate counsel review contracts?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "drones_use": {
+                                "type": "choice",
+                                "label": "3.4 Does the applicant use drones?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "work_at_airports": {
+                                "type": "choice",
+                                "label": "3.5 Does the applicant work at airports?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "airport_example": {
+                                "type": "text",
+                                "label": "Please provide examples",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_risk_mgmt_pol_gnrl_qs_work_at_airports",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "hazard_analysis": {
+                                "type": "choice",
+                                "label": "3.6 Do you conduct a job hazard analysis on all projects before you begin?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 6,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "carrier_loss_history": {
+                    "type": "section",
+                    "label": "Carrier & Loss History",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "prior_carriers": {
+                                "type": "collection",
+                                "label": "Prior Carriers",
+                                "rows": [
+                                    {
+                                        "lob": {
+                                            "type": "choice",
+                                            "label": "Line of Business",
+                                            "options": {
+                                                "general_liability": "General Liability",
+                                                "pollution": "Pollution",
+                                                "professional": "Professional"
+                                            },
+                                            "width": 3,
+                                            "required": false,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "coverage_timeframe": {
+                                            "type": "choice",
+                                            "label": "Coverage Timeframe",
+                                            "options": {
+                                                "current_policy_year": "Current Policy Year",
+                                                "one_year_prior": "1 Year Prior",
+                                                "two_year_prior": "2 Years Prior",
+                                                "three_year_prior": "3 Years Prior",
+                                                "four_year_prior": "4 Years Prior"
+                                            },
+                                            "width": 3,
+                                            "required": false,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "carrier_name": {
+                                            "type": "text",
+                                            "label": "Carrier Name",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        },
+                        {
+                            "legal_involvement": {
+                                "type": "choice",
+                                "label": "4.1 Has the applicant, or any of its principals, partners, officers, directors, or affiliated entities, ever been involved in any claim, suit, or legal proceeding - whether resolved or pending - that is related in any way to the type of coverage being applied for or to any operations of the business?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 12,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "legal_involvement_example": {
+                                "type": "text",
+                                "label": "4.2 If yes, please provide full details including date, nature of the claim or proceeding, parties involved, resolution or current status, and any insurance coverage or payments applicable:",
+                                "width": 12,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "req_coverage_carrier_loss_history_legal_involvement",
+                                                            "comparison": "is_equal",
+                                                            "value": "yes"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "rejected_during_prior_three_years": {
+                                "type": "choice",
+                                "label": "4.3 Has any policy or coverage been declined, cancelled or non-renewed during the prior 3 years?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 12,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "incident_awareness": {
+                                "type": "choice",
+                                "label": "4.4 Is the applicant aware of any circumstances which may result in any claim, suit, or notice of incident against the applicant, the predecessors in business, any of the present or past partners or officers, or any staff member, or has any claim, suit, or notice of incident been made against the applicant, any officer, or any staff member?",
+                                "options": {
+                                    "yes": "Yes",
+                                    "no": "No"
+                                },
+                                "width": 12,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "review_pertinent_info": {
+                                "type": "text",
+                                "label": "Please provide any other information which might be pertinent to our underwriting review or coverage determination of this policy:",
+                                "width": 12,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+    "rater_calculations": {
+        "label": "Rater Calculations",
+        "rows": [
+            {
+                "effective_date": {
+                    "type": "date",
+                    "label": "Effective Date",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "decision": null
+                },
+                "named_insured": {
+                    "type": "text",
+                    "label": "Named Insured",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                }
+            },
+            {
+                "primary_risk_state": {
+                    "type": "choice",
+                    "label": "Primary Risk State",
+                    "options": {
+                        "alabama": "Alabama",
+                        "alaska": "Alaska",
+                        "arizona": "Arizona",
+                        "arkansas": "Arkansas",
+                        "california": "California",
+                        "colorado": "Colorado",
+                        "connecticut": "Connecticut",
+                        "delaware": "Delaware",
+                        "florida": "Florida",
+                        "georgia": "Georgia",
+                        "hawaii": "Hawaii",
+                        "idaho": "Idaho",
+                        "illinois": "Illinois",
+                        "indiana": "Indiana",
+                        "iowa": "Iowa",
+                        "kansas": "Kansas",
+                        "kentucky": "Kentucky",
+                        "louisiana": "Louisiana",
+                        "maine": "Maine",
+                        "maryland": "Maryland",
+                        "massachusetts": "Massachusetts",
+                        "michigan": "Michigan",
+                        "minnesota": "Minnesota",
+                        "mississippi": "Mississippi",
+                        "missouri": "Missouri",
+                        "montana": "Montana",
+                        "nebraska": "Nebraska",
+                        "nevada": "Nevada",
+                        "new_hampshire": "New Hampshire",
+                        "new_jersey": "New Jersey",
+                        "new_mexico": "New Mexico",
+                        "new_york": "New York",
+                        "north_carolina": "North Carolina",
+                        "north_dakota": "North Dakota",
+                        "ohio": "Ohio",
+                        "oklahoma": "Oklahoma",
+                        "oregon": "Oregon",
+                        "pennsylvania": "Pennsylvania",
+                        "rhode_island": "Rhode Island",
+                        "south_carolina": "South Carolina",
+                        "south_dakota": "South Dakota",
+                        "tennessee": "Tennessee",
+                        "texas": "Texas",
+                        "utah": "Utah",
+                        "vermont": "Vermont",
+                        "virginia": "Virginia",
+                        "washington": "Washington",
+                        "washington_d_c": "Washington, D.C.",
+                        "west_virginia": "West Virginia",
+                        "wisconsin": "Wisconsin",
+                        "wyoming": "Wyoming"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                },
+                "revenue": {
+                    "type": "money",
+                    "label": "Revenue",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                }
+            },
+            {
+                "class_of_business": {
+                    "type": "choice",
+                    "label": "Class of Business",
+                    "options": {
+                        "environmental": "Environmental",
+                        "construction": "Construction",
+                        "oil_gas_contracting": "Oil & Gas Contracting",
+                        "oil_gas_consulting": "Oil & Gas Consulting",
+                        "renewables": "Renewables"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                },
+                "size_modification_amount": {
+                    "type": "money",
+                    "label": "Size Modification Amount",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                }
+            },
+            {
+                "deductable": {
+                    "type": "choice",
+                    "label": "Deductable",
+                    "options": {
+                        "deductable_1": "-",
+                        "deductable_2": "$1000",
+                        "deductable_3": "$2500",
+                        "deductable_4": "$5000",
+                        "deductable_5": "$10000",
+                        "deductable_6": "$15000",
+                        "deductable_7": "$20000",
+                        "deductable_8": "$25000",
+                        "deductable_9": "$50000",
+                        "deductable_10": "$75000",
+                        "deductable_12": "$100000",
+                        "deductable_13": "$150000",
+                        "deductable_14": "$250000"
+                    },
+                    "width": 6,
+                    "required": true,
+                    "expanded": false,
+                    "multiple": false,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                }
+            },
+            {
+                "eil_rater": {
+                    "type": "collection",
+                    "label": "EIL Rater",
+                    "rows": [
+                        {
+                            "facility_count": {
+                                "type": "number",
+                                "label": "Facility Count",
+                                "width": 6,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Enter number of facilities",
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "type_of_facility": {
+                                "type": "choice",
+                                "label": "Type Of Facility",
+                                "options": {
+                                    "option_1": "Hospital / Health Facility",
+                                    "option_2": "Gas Station / Marketer",
+                                    "option_3": "Commercial Building",
+                                    "option_4": "Habitational (Number of doors)",
+                                    "option_5": "UST (not EPA Compliant)",
+                                    "option_6": "Above Ground Storage Tanks (Number of Tanks)",
+                                    "option_7": "Golf Courses",
+                                    "option_8": "Marinas",
+                                    "option_9": "Car Wash",
+                                    "option_10": "Municipal Building",
+                                    "option_11": "Manufacturing Site",
+                                    "option_12": "School District",
+                                    "option_13": "Recycling Facility",
+                                    "option_14": "C-Store",
+                                    "option_15": "Hotels",
+                                    "option_16": "Wastewater Treatment Plants",
+                                    "option_17": "Card Lock Facilities",
+                                    "option_18": "Contractor's Yard",
+                                    "option_19": "MISC Low",
+                                    "option_20": "MISC Med",
+                                    "option_21": "MISC High"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Enter Type Of Facility",
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "base_rating": {
+                                "type": "expression",
+                                "label": "Rating Basis",
+                                "width": 6,
+                                "help": "Enter Base Rating",
+                                "expression": "format_currency(if(rater_calculations_eil_rating_type_of_facility == 'option_1',10000,if(rater_calculations_eil_rating_type_of_facility == 'option_2',2500,if(rater_calculations_eil_rating_type_of_facility == 'option_3',5000,if(rater_calculations_eil_rating_type_of_facility == 'option_4',25,if(rater_calculations_eil_rating_type_of_facility == 'option_5',50,if(rater_calculations_eil_rating_type_of_facility == 'option_6',2500,if(rater_calculations_eil_rating_type_of_facility == 'option_7',5000,if(rater_calculations_eil_rating_type_of_facility == 'option_8',25,if(rater_calculations_eil_rating_type_of_facility == 'option_9',50,0))))))))))"
+                            }
+                        },
+                        {
+                            "air_emissions": {
+                                "type": "number",
+                                "label": "Air Emissions (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Enter Air Emissions (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "run_off": {
+                                "type": "number",
+                                "label": "Run-Off (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Enter Run-Off (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "fire_explosion": {
+                                "type": "number",
+                                "label": "Fire/Explosion (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Enter Fire/Explosion (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "ground_water": {
+                                "type": "number",
+                                "label": "Ground Water (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Ground Water (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "nearby_water": {
+                                "type": "number",
+                                "label": "Nearby Water (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Nearby Water (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "surrounding_environment": {
+                                "type": "number",
+                                "label": "Surrounding Environment (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Surrounding Environment (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "co_mingling_exposure": {
+                                "type": "number",
+                                "label": "Co-Mingling Exposure (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Co-Mingling Exposure (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "communicable_disease_exposure": {
+                                "type": "number",
+                                "label": "Communicable Disease Exposure (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Communicable Disease Exposure (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "visitor_employee_exposure": {
+                                "type": "number",
+                                "label": "Visitor / Employee Exposure (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Visitor / Employee Exposure (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "mold": {
+                                "type": "number",
+                                "label": "Mold (%)",
+                                "width": 3,
+                                "required": true,
+                                "scale": 0,
+                                "help": "Mold (%)",
+                                "default": "100",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            },
+            {
+                "calculated_premium": {
+                    "type": "money",
+                    "label": "Calculated Premium",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                },
+                "selected_premium": {
+                    "type": "money",
+                    "label": "Selected Premium",
+                    "width": 6,
+                    "required": true,
+                    "help": null,
+                    "default": null,
+                    "decision": null
+                }
+            },
+            {
+                "coverage": {
+                    "type": "coverage",
+                    "label": "General Liability Coverage",
+                    "help": " ",
+                    "coverage_code": "gl",
+                    "decision": null
+                }
+            }
+        ]
+    }
+}

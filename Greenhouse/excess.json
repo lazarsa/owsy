@@ -1,0 +1,1038 @@
+{
+    "loc_address_step": {
+        "label": "Risk Location",
+        "rows": [
+            {
+                "loc_address": {
+                    "type": "checkbox",
+                    "label": "Location Address is the same as Mailing Address?",
+                    "width": 9,
+                    "required": false,
+                    "help": "Check if 'Yes'. Otherwise add a Location Address/es.",
+                    "default": true,
+                    "decision": null
+                }
+            },
+            {
+                "location": {
+                    "type": "collection",
+                    "label": "Location",
+                    "rows": [
+                        {
+                            "loc_address": {
+                                "type": "text",
+                                "label": "Address",
+                                "width": 6,
+                                "required": false,
+                                "help": "If different from mailing",
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_address_line_2": {
+                                "type": "text",
+                                "label": "Address Line 2",
+                                "width": 6,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "loc_city": {
+                                "type": "text",
+                                "label": "City",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_county": {
+                                "type": "text",
+                                "label": "County",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "loc_zip": {
+                                "type": "number",
+                                "label": "Zip Code",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "loc_state": {
+                                "type": "text",
+                                "label": "State",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            }
+        ]
+    },
+    "excess": {
+        "label": "Excess Coverage",
+        "rows": [
+            {
+                "rate_info": {
+                    "type": "section",
+                    "label": "Rate Information",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "total_limits": {
+                                "type": "choice",
+                                "label": "Total Limits",
+                                "options": {
+                                    "none": "--",
+                                    "one_million": "1,000,000",
+                                    "two_millions": "2,000,000",
+                                    "three_millions": "3,000,000",
+                                    "four_millions": "4,000,000",
+                                    "five_millions": "5,000,000"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": "none",
+                                "decision": null
+                            },
+                            "attachment_point": {
+                                "type": "choice",
+                                "label": "Attachment Point",
+                                "options": {
+                                    "one_million": "1,000,000"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": "one_million",
+                                "decision": null
+                            },
+                            "rating_tier": {
+                                "type": "choice",
+                                "label": "Rating Tier",
+                                "options": {
+                                    "lower_hazard": "1 - Lower Hazard",
+                                    "moderate_hazard": "2 - Moderate Hazard",
+                                    "higher_hazard": "3 - Higher Hazard"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "state": {
+                                "type": "choice",
+                                "label": "State",
+                                "options": {
+                                    "al": "Alabama",
+                                    "ak": "Alaska",
+                                    "az": "Arizona",
+                                    "ar": "Arkansas",
+                                    "ca": "California",
+                                    "co": "Colorado",
+                                    "ct": "Connecticut",
+                                    "de": "Delaware",
+                                    "fl": "Florida",
+                                    "ga": "Georgia",
+                                    "hi": "Hawaii",
+                                    "id": "Idaho",
+                                    "il": "Illinois",
+                                    "in": "Indiana",
+                                    "ia": "Iowa",
+                                    "ks": "Kansas",
+                                    "ky": "Kentucky",
+                                    "la": "Louisiana",
+                                    "me": "Maine",
+                                    "md": "Maryland",
+                                    "ma": "Massachusetts",
+                                    "mi": "Michigan",
+                                    "mn": "Minnesota",
+                                    "ms": "Mississippi",
+                                    "mo": "Missouri",
+                                    "mt": "Montana",
+                                    "ne": "Nebraska",
+                                    "nv": "Nevada",
+                                    "nh": "New Hampshire",
+                                    "nj": "New Jersey",
+                                    "nm": "New Mexico",
+                                    "ny": "New York",
+                                    "nc": "North Carolina",
+                                    "nd": "North Dakota",
+                                    "oh": "Ohio",
+                                    "ok": "Oklahoma",
+                                    "or": "Oregon",
+                                    "pa": "Pennsylvania",
+                                    "ri": "Rhode Island",
+                                    "sc": "South Carolina",
+                                    "sd": "South Dakota",
+                                    "tn": "Tennessee",
+                                    "tx": "Texas",
+                                    "ut": "Utah",
+                                    "vt": "Vermont",
+                                    "va": "Virginia",
+                                    "wa": "Washington",
+                                    "wv": "West Virginia",
+                                    "wi": "Wisconsin",
+                                    "wy": "Wyoming",
+                                    "dc": "District of Columbia"
+                                },
+                                "width": 3,
+                                "required": false,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "zip": {
+                                "type": "text",
+                                "label": "Zip Code",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "schedule_rating": {
+                    "type": "section",
+                    "label": "Schedule Rating",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "screening": {
+                                "type": "number",
+                                "label": "Pre-employmnet Screeing (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 10",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "10",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "payscale": {
+                                "type": "number",
+                                "label": "Pay scale (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 10",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "10",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "supervision": {
+                                "type": "number",
+                                "label": "Supervision of Employees (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 10",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "10",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "manual": {
+                                "type": "number",
+                                "label": "Training/Procedural Manual (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 10",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "10",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "activity": {
+                                "type": "number",
+                                "label": "M&A Activity (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 10",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "10",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "subcontractors": {
+                                "type": "number",
+                                "label": "Use of Subcontractors (Selected Mod)",
+                                "width": 3,
+                                "scale": 3,
+                                "required": false,
+                                "help": "Risk Characteristic | Max Mod: 15",
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": "15",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "schedule_total_mod": {
+                                "type": "expression",
+                                "label": "Total Mod",
+                                "width": 3,
+                                "help": null,
+                                "expression": "format_number(ifnull(excess_schedule_rating_screening,0)+ifnull(excess_schedule_rating_payscale,0)+ifnull(excess_schedule_rating_supervision,0)+ifnull(excess_schedule_rating_manual,0)+ifnull(excess_schedule_rating_activity,0)+ifnull(excess_schedule_rating_subcontractors,0),3)"
+                            }
+                        },
+                        {
+                            "schedule_rating_description": {
+                                "type": "text",
+                                "label": "Schedule Rating Description",
+                                "width": 12,
+                                "required": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "vehicle_information": {
+                    "type": "section",
+                    "label": "Vehicle Information",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "vehicle_passenger": {
+                                "type": "checkbox",
+                                "label": "Private Passenger",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_passenger": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_passenger": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_passenger, excess_vehicle_information_number_of_vehicles_passenger*150, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_light": {
+                                "type": "checkbox",
+                                "label": "Light",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_light": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_light": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_light, excess_vehicle_information_number_of_vehicles_light*185, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_medium": {
+                                "type": "checkbox",
+                                "label": "Medium",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_medium": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_medium": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_medium, excess_vehicle_information_number_of_vehicles_medium*300, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_heavy": {
+                                "type": "checkbox",
+                                "label": "Heavy (Local)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_heavy": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_heavy": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_heavy, excess_vehicle_information_number_of_vehicles_heavy*600, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_heavy_other": {
+                                "type": "checkbox",
+                                "label": "Heavy (Other than Local)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_heavy_other": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_heavy_other": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_heavy_other, excess_vehicle_information_number_of_vehicles_heavy_other*600, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_extra_heavy": {
+                                "type": "checkbox",
+                                "label": "Extra Heavy (Local)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_extra_heavy": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_extra_heavy": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy, excess_vehicle_information_number_of_vehicles_extra_heavy*800, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_extra_heavy_int": {
+                                "type": "checkbox",
+                                "label": "Extra Heavy (Int)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_extra_heavy_int": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_extra_heavy_int": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy_int, excess_vehicle_information_number_of_vehicles_extra_heavy_int*950, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_extra_heavy_long": {
+                                "type": "checkbox",
+                                "label": "Extra Heavy (Long Haul)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_extra_heavy_long": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_extra_heavy_long": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy_long, excess_vehicle_information_number_of_vehicles_extra_heavy_long*1000, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_truck": {
+                                "type": "checkbox",
+                                "label": "Truck Tractors (Local)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_truck": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_truck": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_truck, excess_vehicle_information_number_of_vehicles_truck*1350, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_truck_int": {
+                                "type": "checkbox",
+                                "label": "Truck Tractors (Int)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_truck_int": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_truck_int": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_truck_int, excess_vehicle_information_number_of_vehicles_truck_int*1500, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_truck_long": {
+                                "type": "checkbox",
+                                "label": "Truck Tractors (Long Haul)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_truck_long": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_truck_long": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_truck_long, excess_vehicle_information_number_of_vehicles_truck_long*1500, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_other_low": {
+                                "type": "checkbox",
+                                "label": "Other (Low Risk)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_other_low": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_other_low": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_other_low, excess_vehicle_information_number_of_vehicles_other_low*450, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_other_moderate": {
+                                "type": "checkbox",
+                                "label": "Other (Moderate Risk)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_other_moderate": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_other_moderate": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_other_moderate, excess_vehicle_information_number_of_vehicles_other_moderate*750, 0)"
+                            }
+                        },
+                        {
+                            "vehicle_other_high": {
+                                "type": "checkbox",
+                                "label": "Other (High Risk)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Vehicle Type",
+                                "default": false,
+                                "decision": null
+                            },
+                            "number_of_vehicles_other_high": {
+                                "type": "number",
+                                "label": "Number of Vehicles",
+                                "width": 3,
+                                "scale": 0,
+                                "required": false,
+                                "help": null,
+                                "default": "0",
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "premium_other_high": {
+                                "type": "expression",
+                                "label": "Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "if(excess_vehicle_information_vehicle_other_high, excess_vehicle_information_number_of_vehicles_other_high*1250, 0)"
+                            }
+                        },
+                        {
+                            "total_number_of_vehicles": {
+                                "type": "expression",
+                                "label": "Total Number of Vehicles",
+                                "width": 3,
+                                "help": null,
+                                "expression": "excess_vehicle_information_number_of_vehicles_passenger+excess_vehicle_information_number_of_vehicles_light+excess_vehicle_information_number_of_vehicles_medium+excess_vehicle_information_number_of_vehicles_heavy+excess_vehicle_information_number_of_vehicles_heavy_other+excess_vehicle_information_number_of_vehicles_extra_heavy+excess_vehicle_information_number_of_vehicles_extra_heavy_int+excess_vehicle_information_number_of_vehicles_extra_heavy_long+excess_vehicle_information_number_of_vehicles_truck+excess_vehicle_information_number_of_vehicles_truck_int+excess_vehicle_information_number_of_vehicles_truck_long+excess_vehicle_information_number_of_vehicles_other_low+excess_vehicle_information_number_of_vehicles_other_moderate+excess_vehicle_information_number_of_vehicles_other_high"
+                            },
+                            "total_vehicle_premium": {
+                                "type": "expression",
+                                "label": "Total Premium",
+                                "width": 3,
+                                "help": null,
+                                "expression": "excess_vehicle_information_premium_passenger+excess_vehicle_information_premium_light+excess_vehicle_information_premium_medium+excess_vehicle_information_premium_heavy+excess_vehicle_information_premium_heavy_other+excess_vehicle_information_premium_extra_heavy+excess_vehicle_information_premium_extra_heavy_int+excess_vehicle_information_premium_extra_heavy_long+excess_vehicle_information_premium_truck+excess_vehicle_information_premium_truck_int+excess_vehicle_information_premium_truck_long+excess_vehicle_information_premium_other_low+excess_vehicle_information_premium_other_moderate+excess_vehicle_information_premium_other_high"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "underlying_premium": {
+                    "type": "section",
+                    "label": "Underlying Premium",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "underlying_auto_liability_bi_pd": {
+                                "type": "money",
+                                "label": "Underlying Auto Liability (BI/PD)",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "1000.00",
+                                "decision": null
+                            },
+                            "hired_non_owned_liability": {
+                                "type": "money",
+                                "label": "Hired / Non-Owned Liability",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "1000.00",
+                                "decision": null
+                            },
+                            "drive_other_car_liability": {
+                                "type": "money",
+                                "label": "Drive Other Car Liability",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "1000.00",
+                                "decision": null
+                            },
+                            "sub_auto_liab": {
+                                "type": "expression",
+                                "label": "Sub Auto Liab (excl. Terrorism)",
+                                "width": 3,
+                                "help": null,
+                                "expression": "format_currency(ifnull(excess_underlying_premium_underlying_auto_liability_bi_pd,0)+ifnull(excess_underlying_premium_hired_non_owned_liability,0)+ifnull(excess_underlying_premium_drive_other_car_liability,0),2)"
+                            }
+                        },
+                        {
+                            "underlying_gl_premium": {
+                                "type": "money",
+                                "label": "Underlying GL Premium",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "3000.00",
+                                "decision": null
+                            },
+                            "removal_of_employee_benefits": {
+                                "type": "money",
+                                "label": "Removal of Employee Benefits",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "1000.00",
+                                "decision": null
+                            },
+                            "removal_of_other": {
+                                "type": "money",
+                                "label": "Removal of Other",
+                                "width": 3,
+                                "required": false,
+                                "help": null,
+                                "default": "1000.00",
+                                "decision": null
+                            },
+                            "sub_gl_premium": {
+                                "type": "expression",
+                                "label": "Sub GL Premium (excl. Terrorism)",
+                                "width": 3,
+                                "help": null,
+                                "expression": "format_currency(ifnull(excess_underlying_premium_underlying_gl_premium,0)-(ifnull(excess_underlying_premium_removal_of_employee_benefits,0)+ifnull(excess_underlying_premium_removal_of_other,0)),2)"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "umbrella_premium_calculation": {
+                    "type": "section",
+                    "label": "Umbrella Premium Calculation",
+                    "width": 12,
+                    "rows": [
+                        {
+                            "selected_factor_al_first_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (AL) | First Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 20% - 50% | Standard Factor: 20%",
+                                "default": null,
+                                "minimum_value": "20",
+                                "maximum_value": "50",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "selected_factor_gl_first_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (GL) | First Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 20% - 50% | Standard Factor: 20%",
+                                "default": null,
+                                "minimum_value": "20",
+                                "maximum_value": "50",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "selected_factor_al_second_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (AL) | Second Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 75% | Standard Factor: 64%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "75",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "selected_factor_gl_second_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (GL) | Second Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 75% | Standard Factor: 50%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "75",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "selected_factor_al_third_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (AL) | Third Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 80% | Standard Factor: 68%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "80",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "selected_factor_gl_third_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (GL) | Third Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 80% | Standard Factor: 50%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "80",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "selected_factor_al_fourth_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (AL) | Fourth Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 90% | Standard Factor: 67%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "90",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "selected_factor_gl_fourth_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (GL) | Fourth Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 90% | Standard Factor: 50%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "90",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "selected_factor_al_fifth_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (AL) | Fifth Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 100% | Standard Factor: 76%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "100",
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "selected_factor_gl_fifth_layer": {
+                                "type": "number",
+                                "label": "Selected Factor(%) (GL) | Fifth Layer",
+                                "width": 3,
+                                "scale": 2,
+                                "required": false,
+                                "help": "Range: 50% - 100% | Standard Factor: 50%",
+                                "default": null,
+                                "minimum_value": "50",
+                                "maximum_value": "100",
+                                "grouping": true,
+                                "decision": null
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "umbrella_coverage": {
+                    "type": "coverage",
+                    "label": "Umbrella Premium",
+                    "help": null,
+                    "coverage_code": "cumbr",
+                    "decision": null
+                }
+            }
+        ]
+    }
+}

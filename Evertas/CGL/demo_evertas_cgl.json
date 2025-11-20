@@ -1,5 +1,5 @@
 {
-    "crypto_pc_application": {
+    "general_liability_uat": {
         "label": "Cryptocurrency Property & Casualty Insurance Application",
         "rows": [
             {
@@ -20,7 +20,7 @@
                                     "other": "Other"
                                 },
                                 "width": 6,
-                                "required": true,
+                                "required": false,
                                 "expanded": false,
                                 "multiple": false,
                                 "help": "If \"Other\", please describe.",
@@ -35,12 +35,14 @@
                                 "help": null,
                                 "default": null,
                                 "decision": null
-                            },
+                            }
+                        },
+                        {
                             "business_established_date": {
                                 "type": "date",
                                 "label": "Date the Business Was Established:",
-                                "width": 3,
-                                "required": true,
+                                "width": 6,
+                                "required": false,
                                 "help": null,
                                 "decision": null
                             }
@@ -63,6 +65,35 @@
                                         }
                                     },
                                     {
+                                        "retail_miner_placeholder": {
+                                            "type": "text",
+                                            "label": "Shown On Quote As:",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "default": "Retail Miner/",
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "general_liability_uat_general_info_business_type_retail_miner",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.optional"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
+                                    },
+                                    {
                                         "industrial_miner": {
                                             "type": "checkbox",
                                             "label": "Industrial Miner",
@@ -71,6 +102,35 @@
                                             "help": "e.g., mining of crypto and owning or leasing the commercial space where the operation takes place",
                                             "default": false,
                                             "decision": null
+                                        }
+                                    },
+                                    {
+                                        "industrial_miner_placeholder": {
+                                            "type": "text",
+                                            "label": "Shown On Quote As:",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "default": "Industrial Miner/",
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.optional"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
                                         }
                                     },
                                     {
@@ -83,6 +143,35 @@
                                             "default": false,
                                             "decision": null
                                         }
+                                    },
+                                    {
+                                        "co_location_provider_placeholder": {
+                                            "type": "text",
+                                            "label": "Shown On Quote As:",
+                                            "width": 6,
+                                            "required": false,
+                                            "help": null,
+                                            "default": "Co-Location Provider",
+                                            "decision": {
+                                                "or_conditions": [
+                                                    {
+                                                        "and_conditions": [
+                                                            {
+                                                                "conditions": [
+                                                                    {
+                                                                        "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
+                                                                        "comparison": "is_equal",
+                                                                        "value": "true"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "outcome": "product_field.optional"
+                                                    }
+                                                ],
+                                                "default_outcome": "product_field.excluded"
+                                            }
+                                        }
                                     }
                                 ]
                             }
@@ -92,7 +181,7 @@
                                 "type": "text",
                                 "label": "Description of Business Operations:",
                                 "width": 6,
-                                "required": true,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "decision": null
@@ -124,7 +213,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_has_other_business_ventures",
+                                                            "identifier": "general_liability_uat_general_info_has_other_business_ventures",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -164,7 +253,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_parent_company_info",
+                                                            "identifier": "general_liability_uat_general_info_parent_company_info",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -204,7 +293,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_subsidiary_info",
+                                                            "identifier": "general_liability_uat_general_info_subsidiary_info",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -244,7 +333,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_exposure_to_chemicals",
+                                                            "identifier": "general_liability_uat_general_info_exposure_to_chemicals",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -284,7 +373,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_has_existing_crypto_insurance",
+                                                            "identifier": "general_liability_uat_general_info_has_existing_crypto_insurance",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -324,7 +413,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_general_info_has_other_evertas_policy",
+                                                            "identifier": "general_liability_uat_general_info_has_other_evertas_policy",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -336,6 +425,30 @@
                                     ],
                                     "default_outcome": "product_field.excluded"
                                 }
+                            }
+                        },
+                        {
+                            "minimum_premium_dolar": {
+                                "type": "number",
+                                "label": "Minimum Earned Premium ($)",
+                                "width": 3,
+                                "required": false,
+                                "scale": 0,
+                                "help": "Enter the $ amount MEP.",
+                                "default": null,
+                                "minimum_value": null,
+                                "maximum_value": null,
+                                "grouping": true,
+                                "decision": null
+                            },
+                            "minimum_premium_percent": {
+                                "type": "text",
+                                "label": "Minimum Earned Premium (%)",
+                                "width": 3,
+                                "required": false,
+                                "help": "Enter the % amount MEP.",
+                                "default": null,
+                                "decision": null
                             }
                         }
                     ]
@@ -383,7 +496,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "identifier": "general_liability_uat_risk_history_past_declined_coverage",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -412,7 +525,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "identifier": "general_liability_uat_risk_history_past_declined_coverage",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -441,7 +554,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_past_declined_coverage",
+                                                            "identifier": "general_liability_uat_risk_history_past_declined_coverage",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -481,7 +594,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_abuse_discrimination_claims",
+                                                            "identifier": "general_liability_uat_risk_history_abuse_discrimination_claims",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -521,7 +634,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_fraud_conviction",
+                                                            "identifier": "general_liability_uat_risk_history_fraud_conviction",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -560,7 +673,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "identifier": "general_liability_uat_risk_history_unresolved_code_violations",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -587,7 +700,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "identifier": "general_liability_uat_risk_history_unresolved_code_violations",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -616,7 +729,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "identifier": "general_liability_uat_risk_history_unresolved_code_violations",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -642,7 +755,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_unresolved_code_violations",
+                                                            "identifier": "general_liability_uat_risk_history_unresolved_code_violations",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -681,7 +794,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "identifier": "general_liability_uat_risk_history_bankruptcy_history",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -708,7 +821,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "identifier": "general_liability_uat_risk_history_bankruptcy_history",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -737,7 +850,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "identifier": "general_liability_uat_risk_history_bankruptcy_history",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -763,7 +876,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_bankruptcy_history",
+                                                            "identifier": "general_liability_uat_risk_history_bankruptcy_history",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -802,7 +915,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "identifier": "general_liability_uat_risk_history_felony_or_lawsuits",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -829,7 +942,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "identifier": "general_liability_uat_risk_history_felony_or_lawsuits",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -858,7 +971,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "identifier": "general_liability_uat_risk_history_felony_or_lawsuits",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -884,7 +997,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_felony_or_lawsuits",
+                                                            "identifier": "general_liability_uat_risk_history_felony_or_lawsuits",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -923,7 +1036,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "identifier": "general_liability_uat_risk_history_has_judgments_or_liens",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -950,7 +1063,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "identifier": "general_liability_uat_risk_history_has_judgments_or_liens",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -979,7 +1092,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "identifier": "general_liability_uat_risk_history_has_judgments_or_liens",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1005,7 +1118,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_has_judgments_or_liens",
+                                                            "identifier": "general_liability_uat_risk_history_has_judgments_or_liens",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1045,7 +1158,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_business_in_trust",
+                                                            "identifier": "general_liability_uat_risk_history_business_in_trust",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1084,7 +1197,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_regulatory_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1111,7 +1224,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_regulatory_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1140,7 +1253,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_regulatory_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1166,7 +1279,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_regulatory_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_regulatory_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1183,7 +1296,7 @@
                         {
                             "licensing_disputes": {
                                 "type": "checkbox",
-                                "label": "Currently Involved in Iny Licensing Dispute?",
+                                "label": "Currently Involved in Any Licensing Dispute?",
                                 "width": 12,
                                 "required": false,
                                 "help": "If \"Yes\", please advise the date, explanation, resolution, and date of resolution or expected date of resolution.",
@@ -1205,7 +1318,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_licensing_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1232,7 +1345,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_licensing_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1261,7 +1374,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_licensing_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1287,7 +1400,7 @@
                                                 {
                                                     "conditions": [
                                                         {
-                                                            "identifier": "crypto_pc_application_risk_history_licensing_disputes",
+                                                            "identifier": "general_liability_uat_risk_history_licensing_disputes",
                                                             "comparison": "is_equal",
                                                             "value": "true"
                                                         }
@@ -1320,24 +1433,7 @@
                                             "type": "text",
                                             "label": "Location Number",
                                             "width": 3,
-                                            "required": true,
-                                            "help": null,
-                                            "default": null,
-                                            "decision": null
-                                        }
-                                    },
-                                    {
-                                        "class_description": {
-                                            "type": "choice",
-                                            "label": "Class Description",
-                                            "options": {
-                                                "edp": "Electronic Data Processing Center",
-                                                "office": "Office"
-                                            },
-                                            "width": 3,
-                                            "required": true,
-                                            "expanded": false,
-                                            "multiple": false,
+                                            "required": false,
                                             "help": null,
                                             "default": null,
                                             "decision": null
@@ -1348,7 +1444,7 @@
                                             "type": "text",
                                             "label": "Street",
                                             "width": 6,
-                                            "required": true,
+                                            "required": false,
                                             "help": null,
                                             "default": null,
                                             "decision": null
@@ -1987,10 +2083,19 @@
                                                 "youngstown": "Youngstown",
                                                 "ypsilanti": "Ypsilanti"
                                             },
-                                            "width": 6,
-                                            "required": true,
+                                            "width": 3,
+                                            "required": false,
                                             "expanded": false,
                                             "multiple": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "city_others": {
+                                            "type": "text",
+                                            "label": "City (Not on list)",
+                                            "width": 3,
+                                            "required": false,
                                             "help": null,
                                             "default": null,
                                             "decision": null
@@ -2000,26 +2105,15 @@
                                             "label": "State",
                                             "options": {
                                                 "al": "Alabama",
-                                                "ak": "Alaska",
-                                                "az": "Arizona",
                                                 "ar": "Arkansas",
-                                                "ca": "California",
                                                 "co": "Colorado",
-                                                "ct": "Connecticut",
-                                                "de": "Delaware",
-                                                "fl": "Florida",
                                                 "ga": "Georgia",
-                                                "hi": "Hawaii",
                                                 "id": "Idaho",
                                                 "il": "Illinois",
                                                 "in": "Indiana",
                                                 "ia": "Iowa",
                                                 "ks": "Kansas",
                                                 "ky": "Kentucky",
-                                                "la": "Louisiana",
-                                                "me": "Maine",
-                                                "md": "Maryland",
-                                                "ma": "Massachusetts",
                                                 "mi": "Michigan",
                                                 "mn": "Minnesota",
                                                 "ms": "Mississippi",
@@ -2037,13 +2131,11 @@
                                                 "ok": "Oklahoma",
                                                 "or": "Oregon",
                                                 "pa": "Pennsylvania",
-                                                "ri": "Rhode Island",
                                                 "sc": "South Carolina",
                                                 "sd": "South Dakota",
                                                 "tn": "Tennessee",
                                                 "tx": "Texas",
                                                 "ut": "Utah",
-                                                "vt": "Vermont",
                                                 "va": "Virginia",
                                                 "wa": "Washington",
                                                 "wv": "West Virginia",
@@ -2051,7 +2143,7 @@
                                                 "wy": "Wyoming"
                                             },
                                             "width": 6,
-                                            "required": true,
+                                            "required": false,
                                             "expanded": false,
                                             "multiple": false,
                                             "help": null,
@@ -2064,7 +2156,7 @@
                                             "type": "text",
                                             "label": "ZIP",
                                             "width": 3,
-                                            "required": true,
+                                            "required": false,
                                             "help": null,
                                             "default": null,
                                             "decision": null
@@ -2487,11 +2579,46 @@
                                                 "zavala": "Zavala"
                                             },
                                             "width": 3,
-                                            "required": true,
+                                            "required": false,
                                             "expanded": false,
                                             "multiple": false,
                                             "help": null,
                                             "default": null,
+                                            "decision": null
+                                        },
+                                        "county_others": {
+                                            "type": "text",
+                                            "label": "County/Borough (Not on list)",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "class_description": {
+                                            "type": "choice",
+                                            "label": "Class Description",
+                                            "options": {
+                                                "edp": "EDP Center",
+                                                "office": "Office"
+                                            },
+                                            "width": 3,
+                                            "required": true,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": null,
+                                            "default": "edp",
+                                            "decision": null
+                                        },
+                                        "cross_liability": {
+                                            "type": "checkbox",
+                                            "label": "Include Cross Liability?",
+                                            "width": 3,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
+                                            "default": false,
                                             "decision": null
                                         }
                                     },
@@ -2500,8 +2627,8 @@
                                             "type": "checkbox",
                                             "label": "Does the insured service, host, manage, and/or have other mining equipment in their care, custody, and/or control?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2511,8 +2638,8 @@
                                             "type": "checkbox",
                                             "label": "Insured Location is in a Fire Protection Class Code of 1-5?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2522,8 +2649,8 @@
                                             "type": "checkbox",
                                             "label": "Is there a formal written safety and security policy in effect for each insured location?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2533,8 +2660,8 @@
                                             "type": "checkbox",
                                             "label": "Is the hosting company, co-location provider, or party that is managing the mining equipment certified by the manufacturer of the mining equipment?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2544,8 +2671,8 @@
                                             "type": "checkbox",
                                             "label": "24/7 surveillance cameras and/or closed-circuit television active at insured location?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2555,8 +2682,8 @@
                                             "type": "checkbox",
                                             "label": "Liquid immersion cooling for insured mining equipment?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2566,8 +2693,8 @@
                                             "type": "checkbox",
                                             "label": "Mining operations at commercial building(s) of Non-Cumbustible, Masonry Non-Combustible, Modified Fire Resistive, and/or Fire Resistive? (Please note that shipping containers do not qualify.)",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
                                             "decision": null
                                         }
@@ -2577,38 +2704,9 @@
                                             "type": "checkbox",
                                             "label": "Any Losses at insured location within the past 5 years?",
                                             "width": 12,
-                                            "required": true,
-                                            "help": null,
+                                            "required": false,
+                                            "help": "Check if \"Yes\".",
                                             "default": false,
-                                            "decision": null
-                                        }
-                                    },
-                                    {
-                                        "deductibles_dropdown": {
-                                            "type": "choice",
-                                            "label": "Deductible",
-                                            "options": {
-                                                "deductible_1": "$250",
-                                                "deductible_2": "$500",
-                                                "deductible_3": "$1,000",
-                                                "deductible_4": "$2,000",
-                                                "deductible_5": "$3,000",
-                                                "deductible_6": "$4,000",
-                                                "deductible_7": "$5,000",
-                                                "deductible_8": "$10,000",
-                                                "deductible_9": "$15,000",
-                                                "deductible_10": "$20,000",
-                                                "deductible_11": "$25,000",
-                                                "deductible_12": "$50,000",
-                                                "deductible_13": "$75,000",
-                                                "deductible_14": "$100,000"
-                                            },
-                                            "width": 6,
-                                            "required": true,
-                                            "expanded": false,
-                                            "multiple": false,
-                                            "help": "Select your desired deductible.",
-                                            "default": null,
                                             "decision": null
                                         }
                                     },
@@ -2620,18 +2718,18 @@
                                                 "vacant_yes": "Yes",
                                                 "vacant_no": "No"
                                             },
-                                            "width": 6,
+                                            "width": 3,
                                             "required": true,
                                             "expanded": false,
                                             "multiple": false,
                                             "help": null,
-                                            "default": null,
+                                            "default": "vacant_no",
                                             "decision": null
                                         },
                                         "square_footage": {
                                             "type": "number",
                                             "label": "Square Footage",
-                                            "width": 6,
+                                            "width": 3,
                                             "required": true,
                                             "scale": 0,
                                             "help": null,
@@ -2640,9 +2738,7 @@
                                             "maximum_value": null,
                                             "grouping": true,
                                             "decision": null
-                                        }
-                                    },
-                                    {
+                                        },
                                         "cover_limitations": {
                                             "type": "choice",
                                             "label": "Add Designated Premises Cover Limitation?",
@@ -2655,39 +2751,63 @@
                                             "expanded": false,
                                             "multiple": false,
                                             "help": null,
-                                            "default": null,
+                                            "default": "designated_no",
                                             "decision": null
                                         }
                                     },
                                     {
-                                        "coverage_purchase": {
+                                        "increased_premises_rented_to_you_limit": {
                                             "type": "choice",
-                                            "label": "Will applicant purchase Bitsure CP and/or EDP coverage?",
+                                            "label": "Increased Premises Rented to You Limit",
                                             "options": {
-                                                "purchase_yes": "Yes",
-                                                "purchase_no": "No"
+                                                "fifty": "$50,000",
+                                                "one_hundred": "$100,000",
+                                                "two_hundred_fifty": "$250,000",
+                                                "five_hundred": "$500,000"
                                             },
                                             "width": 6,
                                             "required": true,
                                             "expanded": false,
                                             "multiple": false,
-                                            "help": null,
+                                            "help": "$50,000 Included.",
+                                            "default": "fifty",
+                                            "decision": null
+                                        },
+                                        "minimum_premium_dolar": {
+                                            "type": "money",
+                                            "label": "Minimum Premium:",
+                                            "width": 3,
+                                            "required": true,
+                                            "help": "Enter the lowest value a premium can be.",
                                             "default": null,
                                             "decision": null
                                         },
-                                        "terrorism_coverage": {
+                                        "deductibles_dropdown": {
                                             "type": "choice",
-                                            "label": "Terrorism Coverage Selected?",
+                                            "label": "Deductible",
                                             "options": {
-                                                "terrorism_yes": "Yes",
-                                                "terrorism_no": "No"
+                                                "deductible_1": "$250",
+                                                "deductible_2": "$500",
+                                                "deductible_3": "$750",
+                                                "deductible_4": "$1,000",
+                                                "deductible_5": "$2,000",
+                                                "deductible_6": "$3,000",
+                                                "deductible_7": "$4,000",
+                                                "deductible_8": "$5,000",
+                                                "deductible_9": "$10,000",
+                                                "deductible_10": "$15,000",
+                                                "deductible_11": "$20,000",
+                                                "deductible_12": "$25,000",
+                                                "deductible_13": "$50,000",
+                                                "deductible_14": "$75,000",
+                                                "deductible_15": "$100,000"
                                             },
-                                            "width": 6,
+                                            "width": 3,
                                             "required": true,
                                             "expanded": false,
                                             "multiple": false,
-                                            "help": null,
-                                            "default": null,
+                                            "help": "Select your desired deductible.",
+                                            "default": "deductible_4",
                                             "decision": null
                                         }
                                     },
@@ -2711,8 +2831,8 @@
                                                         "type": "checkbox",
                                                         "label": "Does the Hosting/Co-Location Company Have Technicians/Employees Who Are Certified by the Manufacturer(s)?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": null,
+                                                        "required": false,
+                                                        "help": "Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": null
                                                     }
@@ -2722,8 +2842,8 @@
                                                         "type": "checkbox",
                                                         "label": "Is There a Formal Written Safety and Security Policy in Effect for Each Facility Where Your Equipment Is Operational?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Retail-Miner Specific Question",
+                                                        "required": false,
+                                                        "help": "Retail-Miner Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -2732,14 +2852,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_retail_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2751,8 +2871,8 @@
                                                         "type": "checkbox",
                                                         "label": "Does Your Hosting Contract Require You To Insure Your Own Equipment That Is in the Possession of the Hosting/Co-Location Company?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Retail-Miner Specific Question",
+                                                        "required": false,
+                                                        "help": "Retail-Miner Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -2761,14 +2881,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_retail_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2780,8 +2900,8 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Lease Your Equipment to Others?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Retail-Miner Specific Question",
+                                                        "required": false,
+                                                        "help": "Retail-Miner Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -2790,14 +2910,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_retail_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_retail_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2809,7 +2929,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Foreign Operations, Foreign Products Distributed in the USA, or USA Products Sold/Distributed in Foreign Countries?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -2819,14 +2939,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2848,7 +2968,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question1",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question1",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -2867,8 +2987,8 @@
                                                         "type": "checkbox",
                                                         "label": "Is There a Formal Written Safety and Security Policy in Effect for Each Location Listed?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Industrial-Miner Specific Question",
+                                                        "required": false,
+                                                        "help": "Industrial-Miner Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -2877,14 +2997,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2896,7 +3016,7 @@
                                                         "type": "checkbox",
                                                         "label": "Have Any Crimes Occured or Been Atempted at Any of Your Locations Within the Last 3 Years?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -2906,14 +3026,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2935,7 +3055,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question3",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question3",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -2954,8 +3074,8 @@
                                                         "type": "checkbox",
                                                         "label": "Does the Businesses’ Promotional Literature Make Any Representations About the Safety or Security of Any Location and/or Premises?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Industrial-Miner Specific Question",
+                                                        "required": false,
+                                                        "help": "Industrial-Miner Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -2964,14 +3084,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -2983,7 +3103,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Demolition, Structural Alterations, Construction, Renovation and/or Remodeling Projects Contemplated at Any of the Listed Locations?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -2993,14 +3113,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3022,7 +3142,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question5",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question5",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3041,7 +3161,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Machinery or Equipment Loaned or Rented to Others?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3051,14 +3171,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3080,7 +3200,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question6",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question6",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3099,7 +3219,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Operations Related to Cryptocurrency Mining Sold, Acquired or Discontinued in the Last 5 Years?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3109,14 +3229,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3138,7 +3258,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question7",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question7",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3157,7 +3277,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Have Past, Present or Discontinued Operations Involve(d) With Storing, Treating, Discharging, Applying, Disposing or Transporting of Hazardous Material(s) [i.e. Landfills, Waste, Fuel Tanks, Biohazardous or Radioactive Material, etc.]?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3167,14 +3287,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3196,7 +3316,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question8",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question8",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3215,7 +3335,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Exposure to Radioactive/Nuclear Material?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3225,14 +3345,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3254,7 +3374,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question9",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question9",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3273,7 +3393,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Host Equipment Other Than Your Own?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain and provide the approximate value of the non-owned equipment.",
                                                         "default": false,
                                                         "decision": {
@@ -3283,14 +3403,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3312,7 +3432,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question10",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question10",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3345,7 +3465,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question10",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question10",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3364,7 +3484,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Offer Guarantees, Warrranties, Hold Harmless Agreements in Any of Your Client or Vendor Contracts?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3374,14 +3494,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3403,7 +3523,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question11",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question11",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3422,7 +3542,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Lease Equipment to Others?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Industrial-Miner Specific Question. | If \"Yes\", please explain and provide a sample of your leasing contract.",
                                                         "default": false,
                                                         "decision": {
@@ -3432,14 +3552,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_industrial_miner",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_industrial_miner",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3461,7 +3581,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question12",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_industrial_miner_specific_question12",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3480,7 +3600,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Foreign Operations, Foreign Products Distributed in the USA, or USA Products Sold/Distributed in Foreign Countries?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3490,14 +3610,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3519,7 +3639,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question1",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question1",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3538,8 +3658,8 @@
                                                         "type": "checkbox",
                                                         "label": "Is There a Formal Written Safety and Security Policy in Effect for Each Location Listed?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Co-Location Provider Specific Question.",
+                                                        "required": false,
+                                                        "help": "Co-Location Provider Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -3548,14 +3668,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3567,7 +3687,7 @@
                                                         "type": "checkbox",
                                                         "label": "Have Any Crimes Occurred or Been Attempted at Any of Your Locations Within the Last 3 Years?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3577,14 +3697,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3606,7 +3726,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question3",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question3",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3625,8 +3745,8 @@
                                                         "type": "checkbox",
                                                         "label": "Does the Businesses’ Promotional Literature Make Any Representations About the Safety or Security of Any Location and/or Premises?",
                                                         "width": 12,
-                                                        "required": true,
-                                                        "help": "Co-Location Provider Specific Question.",
+                                                        "required": false,
+                                                        "help": "Co-Location Provider Specific Question - Check if \"Yes\".",
                                                         "default": false,
                                                         "decision": {
                                                             "or_conditions": [
@@ -3635,14 +3755,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3654,7 +3774,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Demolition, Structural Alterations, Construction, Renovation and/or Remodeling Projects Contemplated at Any of the Listed Locations?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3664,14 +3784,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3693,7 +3813,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question5",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question5",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3712,7 +3832,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Machinery or Equipment Loaned or Rented to Others?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3722,14 +3842,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3751,7 +3871,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question6",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question6",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3770,7 +3890,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Operations Related to Cryptocurrency Mining Sold, Acquired or Discontinued in the Last 5 Years?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3780,14 +3900,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3809,7 +3929,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question7",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question7",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3828,7 +3948,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Have Past, Present or Discontinued Operations Involve(d) With Storing, Treating, Discharging, Applying, Disposing or Transporting of Hazardous Material(s) [i.e. Landfills, Waste, Fuel Tanks, Biohazardous or Radioactive Material, etc.]?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3838,14 +3958,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3867,7 +3987,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question8",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question8",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3886,7 +4006,7 @@
                                                         "type": "checkbox",
                                                         "label": "Any Exposure to Radioactive/Nuclear Material?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -3896,14 +4016,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3925,7 +4045,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question9",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question9",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -3944,7 +4064,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Host Equipment Other Than Your Own?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain and provide the approximate value of the non-owned equipment.",
                                                         "default": false,
                                                         "decision": {
@@ -3954,14 +4074,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -3983,7 +4103,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -4016,7 +4136,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question10",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -4035,7 +4155,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Offer Guarantees, Warranties, or Hold Harmless Agreements in Any of Your Client or Vendor Contracts?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain.",
                                                         "default": false,
                                                         "decision": {
@@ -4045,14 +4165,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -4074,7 +4194,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question11",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question11",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
@@ -4093,9 +4213,9 @@
                                                         "type": "checkbox",
                                                         "label": "Do Your Hosting Client Contracts Require Your Clients To Insure Their Own Equipment That Is in Your Possession and Under Your Maintenance?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"No\", please explain.",
-                                                        "default": true,
+                                                        "default": false,
                                                         "decision": {
                                                             "or_conditions": [
                                                                 {
@@ -4103,14 +4223,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -4132,9 +4252,9 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question12",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question12",
                                                                                     "comparison": "is_equal",
-                                                                                    "value": "false"
+                                                                                    "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
@@ -4151,7 +4271,7 @@
                                                         "type": "checkbox",
                                                         "label": "Do You Lease Equipment to Others?",
                                                         "width": 12,
-                                                        "required": true,
+                                                        "required": false,
                                                         "help": "Co-Location Provider Specific Question. | If \"Yes\", please explain and provide a sample of your leasing contract.",
                                                         "default": false,
                                                         "decision": {
@@ -4161,14 +4281,14 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_general_info_business_type_co_location_provider",
+                                                                                    "identifier": "general_liability_uat_general_info_business_type_co_location_provider",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
                                                                             ]
                                                                         }
                                                                     ],
-                                                                    "outcome": "product_field.required"
+                                                                    "outcome": "product_field.optional"
                                                                 }
                                                             ],
                                                             "default_outcome": "product_field.excluded"
@@ -4190,7 +4310,7 @@
                                                                         {
                                                                             "conditions": [
                                                                                 {
-                                                                                    "identifier": "crypto_pc_application_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question13",
+                                                                                    "identifier": "general_liability_uat_insured_locations_commercial_general_liability_operational_questions_co_location_provider_specific_question13",
                                                                                     "comparison": "is_equal",
                                                                                     "value": "true"
                                                                                 }
