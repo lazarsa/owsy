@@ -19,65 +19,11 @@
                     "label": "Location",
                     "rows": [
                         {
-                            "loc_address": {
-                                "type": "text",
+                            "address": {
+                                "type": "address",
                                 "label": "Address",
-                                "width": 6,
                                 "required": false,
-                                "help": "If different from mailing",
-                                "default": null,
-                                "decision": null
-                            },
-                            "loc_address_line_2": {
-                                "type": "text",
-                                "label": "Address Line 2",
-                                "width": 6,
-                                "required": false,
-                                "help": null,
-                                "default": null,
-                                "decision": null
-                            }
-                        },
-                        {
-                            "loc_city": {
-                                "type": "text",
-                                "label": "City",
-                                "width": 3,
-                                "required": false,
-                                "help": null,
-                                "default": null,
-                                "decision": null
-                            },
-                            "loc_county": {
-                                "type": "text",
-                                "label": "County",
-                                "width": 3,
-                                "required": false,
-                                "help": null,
-                                "default": null,
-                                "decision": null
-                            },
-                            "loc_zip": {
-                                "type": "number",
-                                "label": "Zip Code",
-                                "width": 3,
-                                "scale": 0,
-                                "required": false,
-                                "help": null,
-                                "default": null,
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
-                                "decision": null
-                            },
-                            "loc_state": {
-                                "type": "text",
-                                "label": "State",
-                                "width": 3,
-                                "required": false,
-                                "help": null,
-                                "default": null,
-                                "decision": null
+                                "help": "Enter your address"
                             }
                         }
                     ],
@@ -147,78 +93,31 @@
                             }
                         },
                         {
-                            "state": {
-                                "type": "choice",
-                                "label": "State",
-                                "options": {
-                                    "al": "Alabama",
-                                    "ak": "Alaska",
-                                    "az": "Arizona",
-                                    "ar": "Arkansas",
-                                    "ca": "California",
-                                    "co": "Colorado",
-                                    "ct": "Connecticut",
-                                    "de": "Delaware",
-                                    "fl": "Florida",
-                                    "ga": "Georgia",
-                                    "hi": "Hawaii",
-                                    "id": "Idaho",
-                                    "il": "Illinois",
-                                    "in": "Indiana",
-                                    "ia": "Iowa",
-                                    "ks": "Kansas",
-                                    "ky": "Kentucky",
-                                    "la": "Louisiana",
-                                    "me": "Maine",
-                                    "md": "Maryland",
-                                    "ma": "Massachusetts",
-                                    "mi": "Michigan",
-                                    "mn": "Minnesota",
-                                    "ms": "Mississippi",
-                                    "mo": "Missouri",
-                                    "mt": "Montana",
-                                    "ne": "Nebraska",
-                                    "nv": "Nevada",
-                                    "nh": "New Hampshire",
-                                    "nj": "New Jersey",
-                                    "nm": "New Mexico",
-                                    "ny": "New York",
-                                    "nc": "North Carolina",
-                                    "nd": "North Dakota",
-                                    "oh": "Ohio",
-                                    "ok": "Oklahoma",
-                                    "or": "Oregon",
-                                    "pa": "Pennsylvania",
-                                    "ri": "Rhode Island",
-                                    "sc": "South Carolina",
-                                    "sd": "South Dakota",
-                                    "tn": "Tennessee",
-                                    "tx": "Texas",
-                                    "ut": "Utah",
-                                    "vt": "Vermont",
-                                    "va": "Virginia",
-                                    "wa": "Washington",
-                                    "wv": "West Virginia",
-                                    "wi": "Wisconsin",
-                                    "wy": "Wyoming",
-                                    "dc": "District of Columbia"
-                                },
-                                "width": 3,
-                                "required": false,
-                                "expanded": false,
-                                "multiple": false,
-                                "help": null,
-                                "default": null,
-                                "decision": null
-                            },
-                            "zip": {
+                            "test_field": {
                                 "type": "text",
-                                "label": "Zip Code",
+                                "label": "Test field",
                                 "width": 3,
-                                "required": false,
                                 "help": null,
                                 "default": null,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_rate_info_total_limits",
+                                                            "comparison": "is_equal",
+                                                            "value": "two_millions"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             }
                         }
                     ]
@@ -356,13 +255,30 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_passenger",
+                                                            "comparison": "is_equal",
+                                                            "value": "false"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_passenger": {
                                 "type": "expression",

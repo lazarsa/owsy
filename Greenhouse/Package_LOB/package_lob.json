@@ -61,8 +61,8 @@
                                 "type": "number",
                                 "label": "Zip Code",
                                 "width": 3,
-                                "required": false,
                                 "scale": 0,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "minimum_value": null,
@@ -110,7 +110,6 @@
                         "rejected": "Rejected"
                     },
                     "width": 3,
-                    "required": false,
                     "expanded": false,
                     "multiple": false,
                     "help": null,
@@ -139,7 +138,6 @@
                     "type": "text",
                     "label": "Authority Name",
                     "width": 6,
-                    "required": false,
                     "help": null,
                     "default": null,
                     "decision": {
@@ -181,7 +179,6 @@
                         "gen_liab_cm": "Claims Made"
                     },
                     "width": 6,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": null,
@@ -252,7 +249,6 @@
                         "ten_mill": "$10,000,000"
                     },
                     "width": 3,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select General Liability (Per Occurrence) limit.",
@@ -294,7 +290,6 @@
                         "ten_mill": "$10,000,000"
                     },
                     "width": 3,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select General Liability (General Aggregate) limit.",
@@ -337,7 +332,6 @@
                         "two_hundred_fifty_thousand": "$250,000"
                     },
                     "width": 6,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select General Liability deductible amount",
@@ -381,7 +375,6 @@
                         "pol_liab_cm": "Claims Made"
                     },
                     "width": 6,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": null,
@@ -452,7 +445,6 @@
                         "ten_mill": "$10,000,000"
                     },
                     "width": 3,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select Pollution Liability (Per Occurrence) limit.",
@@ -494,7 +486,6 @@
                         "ten_mill": "$10,000,000"
                     },
                     "width": 3,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select Pollution Liability (General Aggregate) limit.",
@@ -537,7 +528,6 @@
                         "two_hundred_fifty_thousand": "$250,000"
                     },
                     "width": 6,
-                    "required": true,
                     "expanded": false,
                     "multiple": false,
                     "help": "Select Pollution Liability deductible amount",
@@ -866,7 +856,6 @@
                                             "type": "text",
                                             "label": "Describe:",
                                             "width": 3,
-                                            "required": false,
                                             "help": "Describe operation.",
                                             "default": null,
                                             "decision": {
@@ -953,8 +942,8 @@
                                             "type": "number",
                                             "label": "Percentage of Work (%)",
                                             "width": 3,
-                                            "required": false,
                                             "scale": 0,
+                                            "required": false,
                                             "help": null,
                                             "default": null,
                                             "minimum_value": null,
@@ -966,7 +955,6 @@
                                             "type": "text",
                                             "label": "Describe:",
                                             "width": 3,
-                                            "required": false,
                                             "help": "Describe operation.",
                                             "default": null,
                                             "decision": {
@@ -1025,8 +1013,8 @@
                                 "type": "number",
                                 "label": "Year Established:",
                                 "width": 3,
-                                "required": false,
                                 "scale": 0,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "minimum_value": null,
@@ -1231,7 +1219,6 @@
                                     "no": "No"
                                 },
                                 "width": 3,
-                                "required": true,
                                 "expanded": true,
                                 "multiple": false,
                                 "help": null,
@@ -1264,7 +1251,6 @@
                                     "no": "No"
                                 },
                                 "width": 3,
-                                "required": true,
                                 "expanded": true,
                                 "multiple": false,
                                 "help": null,
@@ -1297,7 +1283,6 @@
                                     "no": "No"
                                 },
                                 "width": 3,
-                                "required": true,
                                 "expanded": true,
                                 "multiple": false,
                                 "help": null,
@@ -1345,7 +1330,6 @@
                                 "type": "checkbox",
                                 "label": "Ongoing and completed operations Additional Insured",
                                 "width": 6,
-                                "required": false,
                                 "help": null,
                                 "default": false,
                                 "decision": {
@@ -1372,7 +1356,6 @@
                                 "type": "checkbox",
                                 "label": "Primary non-contributrory and waiver of subrogation?",
                                 "width": 6,
-                                "required": false,
                                 "help": null,
                                 "default": false,
                                 "decision": {
@@ -1416,7 +1399,6 @@
                                 "type": "text",
                                 "label": "2.4.1 Who reviews the subcontractor's policy?",
                                 "width": 6,
-                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "decision": {
@@ -1462,8 +1444,8 @@
                                 "type": "number",
                                 "label": "2.6.1 How many Part Time employees do you have?",
                                 "width": 3,
-                                "required": false,
                                 "scale": 0,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "minimum_value": null,
@@ -1475,8 +1457,8 @@
                                 "type": "number",
                                 "label": "2.6.2 How many Full Time employees do you have?",
                                 "width": 3,
-                                "required": false,
                                 "scale": 0,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "minimum_value": null,
@@ -1488,8 +1470,8 @@
                                 "type": "number",
                                 "label": "2.6.3 What is your Annual Employee Turnover rate (%)",
                                 "width": 3,
-                                "required": false,
                                 "scale": 0,
+                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "minimum_value": null,
@@ -1531,7 +1513,6 @@
                                     "client": "Your Client"
                                 },
                                 "width": 6,
-                                "required": false,
                                 "expanded": false,
                                 "multiple": false,
                                 "help": null,
@@ -1611,7 +1592,6 @@
                                 "type": "text",
                                 "label": "Please provide examples",
                                 "width": 6,
-                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "decision": {
@@ -1737,7 +1717,6 @@
                                 "type": "text",
                                 "label": "4.2 If yes, please provide full details including date, nature of the claim or proceeding, parties involved, resolution or current status, and any insurance coverage or payments applicable:",
                                 "width": 12,
-                                "required": false,
                                 "help": null,
                                 "default": null,
                                 "decision": {
@@ -1926,57 +1905,809 @@
                     "help": null,
                     "default": null,
                     "decision": null
-                },
-                "size_modification_amount": {
-                    "type": "money",
-                    "label": "Size Modification Amount",
-                    "width": 6,
-                    "required": true,
-                    "help": null,
-                    "default": null,
-                    "decision": null
                 }
             },
             {
-                "deductable": {
-                    "type": "choice",
-                    "label": "Deductable",
-                    "options": {
-                        "deductable_1": "-",
-                        "deductable_2": "$1000",
-                        "deductable_3": "$2500",
-                        "deductable_4": "$5000",
-                        "deductable_5": "$10000",
-                        "deductable_6": "$15000",
-                        "deductable_7": "$20000",
-                        "deductable_8": "$25000",
-                        "deductable_9": "$50000",
-                        "deductable_10": "$75000",
-                        "deductable_12": "$100000",
-                        "deductable_13": "$150000",
-                        "deductable_14": "$250000"
-                    },
-                    "width": 6,
-                    "required": true,
-                    "expanded": false,
-                    "multiple": false,
-                    "help": null,
-                    "default": null,
-                    "decision": null
-                }
-            },
-            {
-                "eil_rater": {
+                "general_liability": {
                     "type": "collection",
-                    "label": "EIL Rater",
+                    "label": "General Liability Coverage",
+                    "rows": [
+                        {
+                            "class_code": {
+                                "type": "choice",
+                                "label": "Class Code",
+                                "options": {
+                                    "type_1": "Above Ground Tank Installation",
+                                    "type_2": "Air Monitoring",
+                                    "type_3": "Alarm Service and Repair (No Monitoring)",
+                                    "type_4": "Analytical Chemist / Laboratory",
+                                    "type_5": "Asbestos, Mold, Lead Abatement",
+                                    "type_6": "Asbestos, Mold, Lead Consulting",
+                                    "type_7": "Bridge Construction",
+                                    "type_8": "Brokering (Environmental)",
+                                    "type_9": "Cable / Conduit Installation Service Repair",
+                                    "type_10": "Carpentry",
+                                    "type_11": "Chemical Distributors",
+                                    "type_12": "Chimney Cleaning / Hood Cleaning",
+                                    "type_13": "Civil Engineering",
+                                    "type_14": "Concrete",
+                                    "type_15": "Confined Space Rescue and Consulting",
+                                    "type_16": "Construction Manager",
+                                    "type_17": "Construction Materials Testing",
+                                    "type_18": "Contaminated Soil Removal",
+                                    "type_19": "Contractors Equipment Rental - Heavy",
+                                    "type_20": "Contractors Equipment Rental - NOC",
+                                    "type_21": "Drilling - Water",
+                                    "type_22": "Drywall Installation",
+                                    "type_23": "Electrical Equipment Installation, Service, Repair - NOC",
+                                    "type_24": "Electrical Equpiment Installation, Service, Repair - Heavy",
+                                    "type_25": "Electrical, Mechanical, Technology Design (Environmental)",
+                                    "type_26": "Elevator Installation, Service, Repair",
+                                    "type_27": "Emergency Response (Clean-Up)",
+                                    "type_28": "Environmental Compliance",
+                                    "type_29": "Environmental Engineering",
+                                    "type_30": "Environmental Impact Studies",
+                                    "type_31": "Excavation",
+                                    "type_32": "Expert Witness Services",
+                                    "type_33": "Fencing",
+                                    "type_34": "Fire Supression System - Inspection, Service, Repair",
+                                    "type_35": "Fire/Water/Smoke Restoration",
+                                    "type_36": "Fireproofing or Insultation Installation",
+                                    "type_37": "Flooring Installation",
+                                    "type_38": "Garbage, Ash, or Refuse Collection",
+                                    "type_39": "General Construction",
+                                    "type_40": "Geotechical Engineering",
+                                    "type_41": "Geotechnical Contracting",
+                                    "type_42": "Haz Materials Handling",
+                                    "type_43": "HVAC Installation, Serivce, Repair",
+                                    "type_44": "Industrial Hygene Consulting (Manual Preperation / HSE)",
+                                    "type_45": "Janitorial Services",
+                                    "type_46": "Landfill Contractors",
+                                    "type_47": "Landscaping",
+                                    "type_48": "Medical Waste Pickup & Transportation",
+                                    "type_49": "Metal Erection - NOC",
+                                    "type_50": "Metal Erection (Industrial, Refinery, etc) - Heavy",
+                                    "type_51": "Mud Logging / Mud Engineering",
+                                    "type_52": "Observe / Report Site Consulting",
+                                    "type_53": "Oil or Gas Lease Work by Contractors",
+                                    "type_54": "Painting",
+                                    "type_55": "Paving Contractors",
+                                    "type_56": "Permitting / Surveying",
+                                    "type_57": "Pipeline Construction",
+                                    "type_58": "Pipeline Testing / Engineering",
+                                    "type_59": "Plaster / Stucco Work",
+                                    "type_60": "Plumbing",
+                                    "type_61": "Quarry Operations",
+                                    "type_62": "Recycling - NOC",
+                                    "type_63": "Refinery Consulting",
+                                    "type_64": "Remediation Action Services",
+                                    "type_65": "Remediation Design",
+                                    "type_66": "Renewable Energy Consulting",
+                                    "type_67": "Rigging Operations",
+                                    "type_68": "Roofing Operations",
+                                    "type_69": "Safety Consulting (Oil/Gas/Heavy Industrial)",
+                                    "type_70": "Septic Tank Cleaning",
+                                    "type_71": "Sewer Mains or Connections Construction",
+                                    "type_72": "Soil Sampling - Drilling - Not oil/gas",
+                                    "type_73": "Storage Tank Removal",
+                                    "type_74": "Tank Construction, Installation, Erection or Repair",
+                                    "type_75": "Water Treatment Design, Installation, Repair",
+                                    "type_76": "Wetlands Restoration, Construction, Rehabilitation",
+                                    "type_77": "Wrecking"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "operation_details": {
+                                "type": "collection",
+                                "label": "Operation Details",
+                                "rows": [
+                                    {
+                                        "revenue_gl": {
+                                            "type": "money",
+                                            "label": "Revenue",
+                                            "width": 6,
+                                            "required": true,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "percentage_of_operations_gl": {
+                                            "type": "number",
+                                            "label": "Percentage of Operations",
+                                            "width": 6,
+                                            "scale": 0,
+                                            "required": true,
+                                            "help": null,
+                                            "default": null,
+                                            "minimum_value": null,
+                                            "maximum_value": null,
+                                            "grouping": true,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "revenue_split": {
+                                            "type": "expression",
+                                            "label": "Revenue Split",
+                                            "width": 12,
+                                            "help": null,
+                                            "expression": "format_currency(ifnull(rater_calculations_general_liability_operation_details_revenue_gl, 0) * (ifnull(rater_calculations_general_liability_operation_details_percentage_of_operations_gl, 0) / 100))"
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        },
+                        {
+                            "total_revenue_split": {
+                                "type": "expression",
+                                "label": "Total Revenue Split",
+                                "width": 3,
+                                "help": null,
+                                "expression": "format_currency(ifnull(rater_calculations_revenue, 0) * (sum(rater_calculations_general_liability_operation_details_percentage_of_operations_gl) / 100))"
+                            },
+                            "total_operations_percentage": {
+                                "type": "expression",
+                                "label": "Total Operations Percentage",
+                                "width": 3,
+                                "help": "The sum of all 'Percentage of Operations' entered in the collection.",
+                                "expression": "format_number(sum(rater_calculations_general_liability_operation_details_percentage_of_operations_gl), 0)"
+                            },
+                            "percentage_left_to_be_entered": {
+                                "type": "expression",
+                                "label": "Percentage Left to be entered",
+                                "width": 3,
+                                "help": "The remaining percentage to reach 100%.",
+                                "expression": "format_number(100 - ifnull(sum(rater_calculations_general_liability_operation_details_percentage_of_operations_gl), 0), 0)"
+                            }
+                        },
+                        {
+                            "percentage_limit_status": {
+                                "type": "expression",
+                                "label": "Percentage Limit Status",
+                                "width": 6,
+                                "help": "Total percentage of operations is within the 100% limit.",
+                                "expression": "if(sum(rater_calculations_general_liability_operation_details_percentage_of_operations_gl) > 100, 'Warning: The total percentage for operations exceeds 100%. Please adjust to proceed.', 'Total percentage is within the 100% limit.')"
+                            }
+                        },
+                        {
+                            "deductable": {
+                                "type": "choice",
+                                "label": "Deductable",
+                                "options": {
+                                    "deductable_1": "-",
+                                    "deductable_2": "$1000",
+                                    "deductable_3": "$2500",
+                                    "deductable_4": "$5000",
+                                    "deductable_5": "$10000",
+                                    "deductable_6": "$15000",
+                                    "deductable_7": "$20000",
+                                    "deductable_8": "$25000",
+                                    "deductable_9": "$50000",
+                                    "deductable_10": "$75000",
+                                    "deductable_11": "$100000",
+                                    "deductable_12": "$150000",
+                                    "deductable_13": "$250000"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "size_modification_amount": {
+                                "type": "money",
+                                "label": "Size Modification Amount",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "coverage": {
+                                "type": "coverage",
+                                "label": " ",
+                                "help": " ",
+                                "coverage_code": "gl",
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            },
+            {
+                "pollution_liability": {
+                    "type": "collection",
+                    "label": "Contractors Pollution Liability Coverage",
+                    "rows": [
+                        {
+                            "class_code": {
+                                "type": "collection",
+                                "label": "Class Code",
+                                "rows": [
+                                    {
+                                        "class_code": {
+                                            "type": "choice",
+                                            "label": "Class Code",
+                                            "options": {
+                                                "type_1": "Above Ground Tank Installation",
+                                                "type_2": "Air Monitoring",
+                                                "type_3": "Alarm Service and Repair (No Monitoring)",
+                                                "type_4": "Analytical Chemist / Laboratory",
+                                                "type_5": "Asbestos, Mold, Lead Abatement",
+                                                "type_6": "Asbestos, Mold, Lead Consulting",
+                                                "type_7": "Bridge Construction",
+                                                "type_8": "Brokering (Environmental)",
+                                                "type_9": "Cable / Conduit Installation Service Repair",
+                                                "type_10": "Carpentry",
+                                                "type_11": "Chemical Distributors",
+                                                "type_12": "Chimney Cleaning / Hood Cleaning",
+                                                "type_13": "Civil Engineering",
+                                                "type_14": "Concrete",
+                                                "type_15": "Confined Space Rescue and Consulting",
+                                                "type_16": "Construction Manager",
+                                                "type_17": "Construction Materials Testing",
+                                                "type_18": "Contaminated Soil Removal",
+                                                "type_19": "Contractors Equipment Rental - Heavy",
+                                                "type_20": "Contractors Equipment Rental - NOC",
+                                                "type_21": "Drilling - Water",
+                                                "type_22": "Drywall Installation",
+                                                "type_23": "Electrical Equipment Installation, Service, Repair - NOC",
+                                                "type_24": "Electrical Equpiment Installation, Service, Repair - Heavy",
+                                                "type_25": "Electrical, Mechanical, Technology Design (Environmental)",
+                                                "type_26": "Elevator Installation, Service, Repair",
+                                                "type_27": "Emergency Response (Clean-Up)",
+                                                "type_28": "Environmental Compliance",
+                                                "type_29": "Environmental Engineering",
+                                                "type_30": "Environmental Impact Studies",
+                                                "type_31": "Excavation",
+                                                "type_32": "Expert Witness Services",
+                                                "type_33": "Fencing",
+                                                "type_34": "Fire Supression System - Inspection, Service, Repair",
+                                                "type_35": "Fire/Water/Smoke Restoration",
+                                                "type_36": "Fireproofing or Insultation Installation",
+                                                "type_37": "Flooring Installation",
+                                                "type_38": "Garbage, Ash, or Refuse Collection",
+                                                "type_39": "General Construction",
+                                                "type_40": "Geotechical Engineering",
+                                                "type_41": "Geotechnical Contracting",
+                                                "type_42": "Haz Materials Handling",
+                                                "type_43": "HVAC Installation, Serivce, Repair",
+                                                "type_44": "Industrial Hygene Consulting (Manual Preperation / HSE)",
+                                                "type_45": "Janitorial Services",
+                                                "type_46": "Landfill Contractors",
+                                                "type_47": "Landscaping",
+                                                "type_48": "Medical Waste Pickup & Transportation",
+                                                "type_49": "Metal Erection - NOC",
+                                                "type_50": "Metal Erection (Industrial, Refinery, etc) - Heavy",
+                                                "type_51": "Mud Logging / Mud Engineering",
+                                                "type_52": "Observe / Report Site Consulting",
+                                                "type_53": "Oil or Gas Lease Work by Contractors",
+                                                "type_54": "Painting",
+                                                "type_55": "Paving Contractors",
+                                                "type_56": "Permitting / Surveying",
+                                                "type_57": "Pipeline Construction",
+                                                "type_58": "Pipeline Testing / Engineering",
+                                                "type_59": "Plaster / Stucco Work",
+                                                "type_60": "Plumbing",
+                                                "type_61": "Quarry Operations",
+                                                "type_62": "Recycling - NOC",
+                                                "type_63": "Refinery Consulting",
+                                                "type_64": "Remediation Action Services",
+                                                "type_65": "Remediation Design",
+                                                "type_66": "Renewable Energy Consulting",
+                                                "type_67": "Rigging Operations",
+                                                "type_68": "Roofing Operations",
+                                                "type_69": "Safety Consulting (Oil/Gas/Heavy Industrial)",
+                                                "type_70": "Septic Tank Cleaning",
+                                                "type_71": "Sewer Mains or Connections Construction",
+                                                "type_72": "Soil Sampling - Drilling - Not oil/gas",
+                                                "type_73": "Storage Tank Removal",
+                                                "type_74": "Tank Construction, Installation, Erection or Repair",
+                                                "type_75": "Water Treatment Design, Installation, Repair",
+                                                "type_76": "Wetlands Restoration, Construction, Rehabilitation",
+                                                "type_77": "Wrecking"
+                                            },
+                                            "width": 6,
+                                            "required": true,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "revenue_split": {
+                                            "type": "money",
+                                            "label": "Revenue Split",
+                                            "width": 6,
+                                            "required": true,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "percentage_of_operations": {
+                                            "type": "number",
+                                            "label": "Percentage of Operations",
+                                            "width": 6,
+                                            "scale": 0,
+                                            "required": false,
+                                            "help": null,
+                                            "default": null,
+                                            "minimum_value": "1",
+                                            "maximum_value": "100",
+                                            "grouping": false,
+                                            "decision": null
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        },
+                        {
+                            "deductable": {
+                                "type": "choice",
+                                "label": "Deductable",
+                                "options": {
+                                    "deductable_1": "-",
+                                    "deductable_2": "$1000",
+                                    "deductable_3": "$2500",
+                                    "deductable_4": "$5000",
+                                    "deductable_5": "$10000",
+                                    "deductable_6": "$15000",
+                                    "deductable_7": "$20000",
+                                    "deductable_8": "$25000",
+                                    "deductable_9": "$50000",
+                                    "deductable_10": "$75000",
+                                    "deductable_11": "$100000",
+                                    "deductable_12": "$150000",
+                                    "deductable_13": "$250000"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "size_modification_amount": {
+                                "type": "money",
+                                "label": "Size Modification Amount",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "number_of_claims_pollution": {
+                                "type": "checkbox",
+                                "label": "Report previous year claims",
+                                "width": 9,
+                                "required": false,
+                                "help": "If 'Yes', please provide details.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "claim_effective_date": {
+                                "type": "date",
+                                "label": "Claim Effective Date:",
+                                "width": 6,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_pollution_liability_number_of_claims_pollution",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "number_of_claims_field": {
+                                "type": "choice",
+                                "label": "Number of Claims",
+                                "options": {
+                                    "claim_1": "1",
+                                    "claim_2": "2",
+                                    "claim_3": "3",
+                                    "claim_4": "4",
+                                    "claim_5": "5",
+                                    "deductable_6": "Sudden and Accidental (30 Day / 90 Day)",
+                                    "deductable_7": "Sudden and Accidental (3 Day / 7 Day)"
+                                },
+                                "width": 6,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_pollution_liability_number_of_claims_pollution",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "claims_description": {
+                                "type": "text",
+                                "label": "Claims Description",
+                                "width": 12,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_pollution_liability_number_of_claims_pollution",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "coverage": {
+                                "type": "coverage",
+                                "label": " ",
+                                "help": " ",
+                                "coverage_code": "polut",
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            },
+            {
+                "proffesional_liability": {
+                    "type": "collection",
+                    "label": "Proffesional Liability Coverage",
+                    "rows": [
+                        {
+                            "class_code": {
+                                "type": "collection",
+                                "label": "Class Code",
+                                "rows": [
+                                    {
+                                        "class_code": {
+                                            "type": "choice",
+                                            "label": "Class Code",
+                                            "options": {
+                                                "type_1": "Above Ground Tank Installation",
+                                                "type_2": "Air Monitoring",
+                                                "type_3": "Alarm Service and Repair (No Monitoring)",
+                                                "type_4": "Analytical Chemist / Laboratory",
+                                                "type_5": "Asbestos, Mold, Lead Abatement",
+                                                "type_6": "Asbestos, Mold, Lead Consulting",
+                                                "type_7": "Bridge Construction",
+                                                "type_8": "Brokering (Environmental)",
+                                                "type_9": "Cable / Conduit Installation Service Repair",
+                                                "type_10": "Carpentry",
+                                                "type_11": "Chemical Distributors",
+                                                "type_12": "Chimney Cleaning / Hood Cleaning",
+                                                "type_13": "Civil Engineering",
+                                                "type_14": "Concrete",
+                                                "type_15": "Confined Space Rescue and Consulting",
+                                                "type_16": "Construction Manager",
+                                                "type_17": "Construction Materials Testing",
+                                                "type_18": "Contaminated Soil Removal",
+                                                "type_19": "Contractors Equipment Rental - Heavy",
+                                                "type_20": "Contractors Equipment Rental - NOC",
+                                                "type_21": "Drilling - Water",
+                                                "type_22": "Drywall Installation",
+                                                "type_23": "Electrical Equipment Installation, Service, Repair - NOC",
+                                                "type_24": "Electrical Equpiment Installation, Service, Repair - Heavy",
+                                                "type_25": "Electrical, Mechanical, Technology Design (Environmental)",
+                                                "type_26": "Elevator Installation, Service, Repair",
+                                                "type_27": "Emergency Response (Clean-Up)",
+                                                "type_28": "Environmental Compliance",
+                                                "type_29": "Environmental Engineering",
+                                                "type_30": "Environmental Impact Studies",
+                                                "type_31": "Excavation",
+                                                "type_32": "Expert Witness Services",
+                                                "type_33": "Fencing",
+                                                "type_34": "Fire Supression System - Inspection, Service, Repair",
+                                                "type_35": "Fire/Water/Smoke Restoration",
+                                                "type_36": "Fireproofing or Insultation Installation",
+                                                "type_37": "Flooring Installation",
+                                                "type_38": "Garbage, Ash, or Refuse Collection",
+                                                "type_39": "General Construction",
+                                                "type_40": "Geotechical Engineering",
+                                                "type_41": "Geotechnical Contracting",
+                                                "type_42": "Haz Materials Handling",
+                                                "type_43": "HVAC Installation, Serivce, Repair",
+                                                "type_44": "Industrial Hygene Consulting (Manual Preperation / HSE)",
+                                                "type_45": "Janitorial Services",
+                                                "type_46": "Landfill Contractors",
+                                                "type_47": "Landscaping",
+                                                "type_48": "Medical Waste Pickup & Transportation",
+                                                "type_49": "Metal Erection - NOC",
+                                                "type_50": "Metal Erection (Industrial, Refinery, etc) - Heavy",
+                                                "type_51": "Mud Logging / Mud Engineering",
+                                                "type_52": "Observe / Report Site Consulting",
+                                                "type_53": "Oil or Gas Lease Work by Contractors",
+                                                "type_54": "Painting",
+                                                "type_55": "Paving Contractors",
+                                                "type_56": "Permitting / Surveying",
+                                                "type_57": "Pipeline Construction",
+                                                "type_58": "Pipeline Testing / Engineering",
+                                                "type_59": "Plaster / Stucco Work",
+                                                "type_60": "Plumbing",
+                                                "type_61": "Quarry Operations",
+                                                "type_62": "Recycling - NOC",
+                                                "type_63": "Refinery Consulting",
+                                                "type_64": "Remediation Action Services",
+                                                "type_65": "Remediation Design",
+                                                "type_66": "Renewable Energy Consulting",
+                                                "type_67": "Rigging Operations",
+                                                "type_68": "Roofing Operations",
+                                                "type_69": "Safety Consulting (Oil/Gas/Heavy Industrial)",
+                                                "type_70": "Septic Tank Cleaning",
+                                                "type_71": "Sewer Mains or Connections Construction",
+                                                "type_72": "Soil Sampling - Drilling - Not oil/gas",
+                                                "type_73": "Storage Tank Removal",
+                                                "type_74": "Tank Construction, Installation, Erection or Repair",
+                                                "type_75": "Water Treatment Design, Installation, Repair",
+                                                "type_76": "Wetlands Restoration, Construction, Rehabilitation",
+                                                "type_77": "Wrecking"
+                                            },
+                                            "width": 6,
+                                            "required": true,
+                                            "expanded": false,
+                                            "multiple": false,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        },
+                                        "revenue_split": {
+                                            "type": "money",
+                                            "label": "Revenue Split",
+                                            "width": 6,
+                                            "required": true,
+                                            "help": null,
+                                            "default": null,
+                                            "decision": null
+                                        }
+                                    },
+                                    {
+                                        "percentage_of_operations": {
+                                            "type": "number",
+                                            "label": "Percentage of Operations",
+                                            "width": 6,
+                                            "scale": 0,
+                                            "required": false,
+                                            "help": null,
+                                            "default": null,
+                                            "minimum_value": "1",
+                                            "maximum_value": "100",
+                                            "grouping": false,
+                                            "decision": null
+                                        }
+                                    }
+                                ],
+                                "readable_template": null
+                            }
+                        },
+                        {
+                            "deductable": {
+                                "type": "choice",
+                                "label": "Deductable",
+                                "options": {
+                                    "deductable_1": "-",
+                                    "deductable_2": "$1000",
+                                    "deductable_3": "$2500",
+                                    "deductable_4": "$5000",
+                                    "deductable_5": "$10000",
+                                    "deductable_6": "$15000",
+                                    "deductable_7": "$20000",
+                                    "deductable_8": "$25000",
+                                    "deductable_9": "$50000",
+                                    "deductable_10": "$75000",
+                                    "deductable_11": "$100000",
+                                    "deductable_12": "$150000",
+                                    "deductable_13": "$250000"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            },
+                            "size_modification_amount": {
+                                "type": "money",
+                                "label": "Size Modification Amount",
+                                "width": 6,
+                                "required": true,
+                                "help": null,
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "number_of_claims_professional": {
+                                "type": "checkbox",
+                                "label": "Report previous year claims",
+                                "width": 9,
+                                "required": false,
+                                "help": "If 'Yes', please provide details.",
+                                "default": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "claim_effective_date": {
+                                "type": "date",
+                                "label": "Claim Effective Date:",
+                                "width": 6,
+                                "help": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_proffesional_liability_number_of_claims_professional",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            },
+                            "number_of_claims_field": {
+                                "type": "choice",
+                                "label": "Number of Claims",
+                                "options": {
+                                    "claim_1": "1",
+                                    "claim_2": "2",
+                                    "claim_3": "3",
+                                    "claim_4": "4",
+                                    "claim_5": "5",
+                                    "deductable_6": "Sudden and Accidental (30 Day / 90 Day)",
+                                    "deductable_7": "Sudden and Accidental (3 Day / 7 Day)"
+                                },
+                                "width": 6,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_proffesional_liability_number_of_claims_professional",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "claims_description": {
+                                "type": "text",
+                                "label": "Claims Description",
+                                "width": 12,
+                                "help": null,
+                                "default": null,
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "rater_calculations_proffesional_liability_number_of_claims_professional",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.required"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
+                            }
+                        },
+                        {
+                            "coverage": {
+                                "type": "coverage",
+                                "label": " ",
+                                "help": " ",
+                                "coverage_code": "prof",
+                                "decision": null
+                            }
+                        }
+                    ],
+                    "readable_template": null
+                }
+            },
+            {
+                "site_polution": {
+                    "type": "collection",
+                    "label": "Site Pllution Coverage (EIL Included)",
                     "rows": [
                         {
                             "facility_count": {
                                 "type": "number",
                                 "label": "Facility Count",
                                 "width": 6,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Enter number of facilities",
                                 "default": null,
                                 "minimum_value": null,
@@ -1984,6 +2715,24 @@
                                 "grouping": true,
                                 "decision": null
                             },
+                            "rating_basis": {
+                                "type": "choice",
+                                "label": "Rating Basis",
+                                "options": {
+                                    "option_1": "Facility Locations",
+                                    "option_2": "Number of Doors",
+                                    "option_3": "Number of Tanks and Age"
+                                },
+                                "width": 6,
+                                "required": true,
+                                "expanded": false,
+                                "multiple": false,
+                                "help": "Select rating base",
+                                "default": null,
+                                "decision": null
+                            }
+                        },
+                        {
                             "type_of_facility": {
                                 "type": "choice",
                                 "label": "Type Of Facility",
@@ -2020,65 +2769,56 @@
                             }
                         },
                         {
-                            "base_rating": {
-                                "type": "expression",
-                                "label": "Rating Basis",
-                                "width": 6,
-                                "help": "Enter Base Rating",
-                                "expression": "format_currency(if(rater_calculations_eil_rating_type_of_facility == 'option_1',10000,if(rater_calculations_eil_rating_type_of_facility == 'option_2',2500,if(rater_calculations_eil_rating_type_of_facility == 'option_3',5000,if(rater_calculations_eil_rating_type_of_facility == 'option_4',25,if(rater_calculations_eil_rating_type_of_facility == 'option_5',50,if(rater_calculations_eil_rating_type_of_facility == 'option_6',2500,if(rater_calculations_eil_rating_type_of_facility == 'option_7',5000,if(rater_calculations_eil_rating_type_of_facility == 'option_8',25,if(rater_calculations_eil_rating_type_of_facility == 'option_9',50,0))))))))))"
-                            }
-                        },
-                        {
                             "air_emissions": {
                                 "type": "number",
                                 "label": "Air Emissions (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Enter Air Emissions (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "run_off": {
                                 "type": "number",
                                 "label": "Run-Off (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Enter Run-Off (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "fire_explosion": {
                                 "type": "number",
                                 "label": "Fire/Explosion (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Enter Fire/Explosion (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "ground_water": {
                                 "type": "number",
                                 "label": "Ground Water (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Ground Water (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             }
                         },
@@ -2087,52 +2827,52 @@
                                 "type": "number",
                                 "label": "Nearby Water (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Nearby Water (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "surrounding_environment": {
                                 "type": "number",
                                 "label": "Surrounding Environment (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Surrounding Environment (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "co_mingling_exposure": {
                                 "type": "number",
                                 "label": "Co-Mingling Exposure (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Co-Mingling Exposure (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "communicable_disease_exposure": {
                                 "type": "number",
                                 "label": "Communicable Disease Exposure (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Communicable Disease Exposure (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             }
                         },
@@ -2141,60 +2881,40 @@
                                 "type": "number",
                                 "label": "Visitor / Employee Exposure (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Visitor / Employee Exposure (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
                                 "decision": null
                             },
                             "mold": {
                                 "type": "number",
                                 "label": "Mold (%)",
                                 "width": 3,
-                                "required": true,
                                 "scale": 0,
+                                "required": true,
                                 "help": "Mold (%)",
                                 "default": "100",
-                                "minimum_value": null,
-                                "maximum_value": null,
-                                "grouping": true,
+                                "minimum_value": "0",
+                                "maximum_value": "100",
+                                "grouping": false,
+                                "decision": null
+                            }
+                        },
+                        {
+                            "coverage": {
+                                "type": "coverage",
+                                "label": " ",
+                                "help": " ",
+                                "coverage_code": "basic",
                                 "decision": null
                             }
                         }
                     ],
                     "readable_template": null
-                }
-            },
-            {
-                "calculated_premium": {
-                    "type": "money",
-                    "label": "Calculated Premium",
-                    "width": 6,
-                    "required": true,
-                    "help": null,
-                    "default": null,
-                    "decision": null
-                },
-                "selected_premium": {
-                    "type": "money",
-                    "label": "Selected Premium",
-                    "width": 6,
-                    "required": true,
-                    "help": null,
-                    "default": null,
-                    "decision": null
-                }
-            },
-            {
-                "coverage": {
-                    "type": "coverage",
-                    "label": "General Liability Coverage",
-                    "help": " ",
-                    "coverage_code": "gl",
-                    "decision": null
                 }
             }
         ]
