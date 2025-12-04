@@ -1,0 +1,7 @@
+limit,rate
+none,0
+one_million,1000000
+two_millions,2000000
+three_millions,3000000
+four_millions,4000000
+five_millions,5000000

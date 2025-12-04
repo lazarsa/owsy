@@ -1,0 +1,13 @@
+square_footage,acre,designated_premises,value
+5000,vacant_no,designated_no,500
+50000,vacant_no,designated_no,1000
+9999999999,vacant_no,designated_no,2500
+5000,vacant_yes,designated_no,21780
+50000,vacant_yes,designated_no,21780
+9999999999,vacant_yes,designated_no,21780
+5000,vacant_no,designated_yes,500
+50000,vacant_no,designated_yes,4000
+9999999999,vacant_no,designated_yes,10000
+5000,vacant_yes,designated_yes,87120
+50000,vacant_yes,designated_yes,87120
+9999999999,vacant_yes,designated_yes,87120

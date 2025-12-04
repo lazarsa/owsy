@@ -1,0 +1,7 @@
+square_footage,acre,value
+5000,vacant_no,0
+50000,vacant_no,5000
+9999999999,vacant_no,50000
+5000,vacant_yes,0
+50000,vacant_yes,0
+9999999999,vacant_yes,0
