@@ -21,7 +21,7 @@
                         {
                             "address": {
                                 "type": "address",
-                                "label": "Address",
+                                "label": "Location Address",
                                 "required": false,
                                 "help": "Enter your address"
                             }
@@ -90,34 +90,6 @@
                                 "help": null,
                                 "default": null,
                                 "decision": null
-                            }
-                        },
-                        {
-                            "test_field": {
-                                "type": "text",
-                                "label": "Test field",
-                                "width": 3,
-                                "help": null,
-                                "default": null,
-                                "decision": {
-                                    "or_conditions": [
-                                        {
-                                            "and_conditions": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "identifier": "excess_rate_info_total_limits",
-                                                            "comparison": "is_equal",
-                                                            "value": "two_millions"
-                                                        }
-                                                    ]
-                                                }
-                                            ],
-                                            "outcome": "product_field.optional"
-                                        }
-                                    ],
-                                    "default_outcome": "product_field.excluded"
-                                }
                             }
                         }
                     ]
@@ -269,7 +241,7 @@
                                                         {
                                                             "identifier": "excess_vehicle_information_vehicle_passenger",
                                                             "comparison": "is_equal",
-                                                            "value": "false"
+                                                            "value": "true"
                                                         }
                                                     ]
                                                 }
@@ -285,7 +257,7 @@
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_passenger, excess_vehicle_information_number_of_vehicles_passenger*150, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_passenger, 0)*150"
                             }
                         },
                         {
@@ -303,20 +275,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_light",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_light": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_light, excess_vehicle_information_number_of_vehicles_light*185, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_light, 0)*185"
                             }
                         },
                         {
@@ -334,20 +323,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_medium",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_medium": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_medium, excess_vehicle_information_number_of_vehicles_medium*300, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_medium, 0)*300"
                             }
                         },
                         {
@@ -365,20 +371,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_heavy",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_heavy": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_heavy, excess_vehicle_information_number_of_vehicles_heavy*600, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_heavy, 0)*600"
                             }
                         },
                         {
@@ -396,20 +419,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_heavy_other",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_heavy_other": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_heavy_other, excess_vehicle_information_number_of_vehicles_heavy_other*600, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_heavy_other, 0)*600"
                             }
                         },
                         {
@@ -427,20 +467,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_extra_heavy",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_extra_heavy": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy, excess_vehicle_information_number_of_vehicles_extra_heavy*800, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy, 0)*800"
                             }
                         },
                         {
@@ -458,20 +515,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_extra_heavy_int",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_extra_heavy_int": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy_int, excess_vehicle_information_number_of_vehicles_extra_heavy_int*950, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy_int, 0)*950"
                             }
                         },
                         {
@@ -489,20 +563,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_extra_heavy_long",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_extra_heavy_long": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_extra_heavy_long, excess_vehicle_information_number_of_vehicles_extra_heavy_long*1000, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy_long, 0)*1000"
                             }
                         },
                         {
@@ -520,20 +611,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_truck",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_truck": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_truck, excess_vehicle_information_number_of_vehicles_truck*1350, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_truck, 0)*1350"
                             }
                         },
                         {
@@ -551,20 +659,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_truck_int",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_truck_int": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_truck_int, excess_vehicle_information_number_of_vehicles_truck_int*1500, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_truck_int, 0)*1500"
                             }
                         },
                         {
@@ -582,20 +707,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_truck_long",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_truck_long": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_truck_long, excess_vehicle_information_number_of_vehicles_truck_long*1500, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_truck_long, 0)*1500"
                             }
                         },
                         {
@@ -613,20 +755,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_other_low",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_other_low": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_other_low, excess_vehicle_information_number_of_vehicles_other_low*450, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_other_low, 0)*450"
                             }
                         },
                         {
@@ -644,20 +803,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_other_moderate",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_other_moderate": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_other_moderate, excess_vehicle_information_number_of_vehicles_other_moderate*750, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_other_moderate, 0)*750"
                             }
                         },
                         {
@@ -675,20 +851,37 @@
                                 "label": "Number of Vehicles",
                                 "width": 3,
                                 "scale": 0,
-                                "required": false,
                                 "help": null,
                                 "default": "0",
                                 "minimum_value": null,
                                 "maximum_value": null,
                                 "grouping": true,
-                                "decision": null
+                                "decision": {
+                                    "or_conditions": [
+                                        {
+                                            "and_conditions": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "identifier": "excess_vehicle_information_vehicle_other_high",
+                                                            "comparison": "is_equal",
+                                                            "value": "true"
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "outcome": "product_field.optional"
+                                        }
+                                    ],
+                                    "default_outcome": "product_field.excluded"
+                                }
                             },
                             "premium_other_high": {
                                 "type": "expression",
                                 "label": "Premium",
                                 "width": 3,
                                 "help": null,
-                                "expression": "if(excess_vehicle_information_vehicle_other_high, excess_vehicle_information_number_of_vehicles_other_high*1250, 0)"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_other_high, 0)*1250"
                             }
                         },
                         {
@@ -697,7 +890,7 @@
                                 "label": "Total Number of Vehicles",
                                 "width": 3,
                                 "help": null,
-                                "expression": "excess_vehicle_information_number_of_vehicles_passenger+excess_vehicle_information_number_of_vehicles_light+excess_vehicle_information_number_of_vehicles_medium+excess_vehicle_information_number_of_vehicles_heavy+excess_vehicle_information_number_of_vehicles_heavy_other+excess_vehicle_information_number_of_vehicles_extra_heavy+excess_vehicle_information_number_of_vehicles_extra_heavy_int+excess_vehicle_information_number_of_vehicles_extra_heavy_long+excess_vehicle_information_number_of_vehicles_truck+excess_vehicle_information_number_of_vehicles_truck_int+excess_vehicle_information_number_of_vehicles_truck_long+excess_vehicle_information_number_of_vehicles_other_low+excess_vehicle_information_number_of_vehicles_other_moderate+excess_vehicle_information_number_of_vehicles_other_high"
+                                "expression": "ifnull(excess_vehicle_information_number_of_vehicles_passenger, 0)+ifnull(excess_vehicle_information_number_of_vehicles_light, 0)+ifnull(excess_vehicle_information_number_of_vehicles_medium, 0)+ifnull(excess_vehicle_information_number_of_vehicles_heavy, 0)+ifnull(excess_vehicle_information_number_of_vehicles_heavy_other, 0)+ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy, 0)+ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy_int, 0)+ifnull(excess_vehicle_information_number_of_vehicles_extra_heavy_long, 0)+ifnull(excess_vehicle_information_number_of_vehicles_truck, 0)+ifnull(excess_vehicle_information_number_of_vehicles_truck_int, 0)+ifnull(excess_vehicle_information_number_of_vehicles_truck_long, 0)+ifnull(excess_vehicle_information_number_of_vehicles_other_low, 0)+ifnull(excess_vehicle_information_number_of_vehicles_other_moderate, 0)+ifnull(excess_vehicle_information_number_of_vehicles_other_high, 0)"
                             },
                             "total_vehicle_premium": {
                                 "type": "expression",
